@@ -9,14 +9,14 @@ export async function getServerSideProps() {
 	const natureVideos = await getVideos('nature');
 	const cookingVideos = await getVideos('cooking', 'UCj4KP216972cPp2w_BAHy8g');
 	const animalVideos = await getVideos('animal');
-	const popularVideos = await getVideos('popular');
+	const oceanVideos = await getVideos('ocean');
 
 	return {
-		props: { natureVideos, cookingVideos, animalVideos, popularVideos }
+		props: { natureVideos, cookingVideos, animalVideos, oceanVideos }
 	};
 };
 
-function Home({ natureVideos, cookingVideos, animalVideos, popularVideos }) {
+function Home({ natureVideos, cookingVideos, animalVideos, oceanVideos }) {
 	return (
 		<>
 			<Head>
@@ -28,7 +28,7 @@ function Home({ natureVideos, cookingVideos, animalVideos, popularVideos }) {
 				<CardList title='Nature' size='large' videos={natureVideos} />
 				<CardList title='Cooking' size='small' videos={cookingVideos} />
 				<CardList title='Animals' size='medium' videos={animalVideos} />
-				<CardList title='Popular' size='small' videos={popularVideos} />
+				<CardList title='Ocean' size='small' videos={oceanVideos} />
 			</main>
 		</>
 	);
