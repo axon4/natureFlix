@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import styles from './Card.module.css';
 import classNames from 'classnames';
 
-function Card({ size = 'medium', imageURL = '/toucan.png' }) {
+function Card({ size = 'medium', imageURL = '/toucan.jpg' }) {
 	const [ source, setSource ] = useState(imageURL);
 
 	const onError = event => {
-		setSource('/toucan.png');
+		setSource('/toucan.jpg');
 		console.error(event);
 	};
 
