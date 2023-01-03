@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './Card.module.css';
+import classNames from 'classnames';
 
 function Card({ size = 'medium', imageURL = '/toucan.png' }) {
 	const [ source, setSource ] = useState(imageURL);
@@ -12,9 +14,9 @@ function Card({ size = 'medium', imageURL = '/toucan.png' }) {
 
 	return (
 		<article className={styles.container}>
-			<div className={styles[size]}>
+			<motion.div className={classNames(styles.animationWrapper, styles[size])} whileHover={{scale: 1.2}}>
 				<Image className={styles.image} src={source} alt='image' fill onError={onError} />
-			</div>
+			</motion.div>
 		</article>
 	);
 };

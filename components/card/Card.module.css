@@ -3,6 +3,15 @@
 	cursor: pointer;
 }
 
+.animationWrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.animationWrapper:hover {
+	z-index: 7;
+}
+
 .small {
 	position: relative;
 	width: 300px;
