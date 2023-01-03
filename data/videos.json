@@ -1,0 +1,930 @@
+{
+	"kind": "youtube#searchListResponse",
+	"etag": "b5dbZT06hjMV0D1hoNuQOwWUS9A",
+	"nextPageToken": "CBsQAA",
+	"regionCode": "GB",
+	"pageInfo": {
+		"totalResults": 1000000,
+		"resultsPerPage": 27
+	},
+	"items": [
+		{
+			"kind": "youtube#searchResult",
+			"etag": "vA8le-l2tKCgTQy98kof8NP1xoo",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "rV_ERKtNyNA"
+			},
+			"snippet": {
+				"publishedAt": "2018-10-29T01:06:16Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "8 Hours of Beautiful Birds (No Music) 4K Nature Relaxation™ - Washington State",
+				"description": "DOWNLOAD/DVD/LICENSE: ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/rV_ERKtNyNA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/rV_ERKtNyNA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/rV_ERKtNyNA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-10-29T01:06:16Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "syc1QRuwYLZ25rIuPhGKimKRvP8",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "0fPQ1lNAUbY"
+			},
+			"snippet": {
+				"publishedAt": "2017-12-24T15:55:15Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "NEW ZEALAND WONDERS (No Music) 100% Pure Nature 4K UHD Ambient Documentary Film -1HR",
+				"description": "MUSIC VERSION @ https://youtu.be/Ky9xa_s297Y | BUY: ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/0fPQ1lNAUbY/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/0fPQ1lNAUbY/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/0fPQ1lNAUbY/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2017-12-24T15:55:15Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "kmq-z5Upa7CU2ehP_xkHjFw4cnI",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "9Nwn-TZfFUI"
+			},
+			"snippet": {
+				"publishedAt": "2015-05-17T16:00:00Z",
+				"channelId": "UC4jWo5kiyOCt4PnvF4jbaLg",
+				"title": "9 HOURS NATURE SOUNDS: RIVER IN THE SHIRE. Relaxation (NO MUSIC) Sleep, Study, Meditation",
+				"description": "9 hours of soothing relaxing nature sounds without music (details below) Join our community/see our products: ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/9Nwn-TZfFUI/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/9Nwn-TZfFUI/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/9Nwn-TZfFUI/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "The Honest Guys - Meditations - Relaxation",
+				"liveBroadcastContent": "none",
+				"publishTime": "2015-05-17T16:00:00Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "Zmtlu_TU9cNaGOwcmt0Me6dL85s",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "FxAgAyZYXJ8"
+			},
+			"snippet": {
+				"publishedAt": "2021-06-07T12:00:54Z",
+				"channelId": "UCCkmgsl8W18oR6c_W7UZ1lQ",
+				"title": "4K Deep Forest - 8 Hours NO LOOP Birdsong - Robin &amp; Blackbird Singing - Relaxing Nature Ambiance",
+				"description": "Relax and sleep with the delicate chirping of the Robin, the melodious song of the Blackbird and the sounds of other birds ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/FxAgAyZYXJ8/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/FxAgAyZYXJ8/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/FxAgAyZYXJ8/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "TheSilentWatcher",
+				"liveBroadcastContent": "none",
+				"publishTime": "2021-06-07T12:00:54Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "qWXymjS3klfn0XyiWhyaC2KQlZA",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "lXoH1oQJvHo"
+			},
+			"snippet": {
+				"publishedAt": "2021-07-02T13:00:34Z",
+				"channelId": "UCg72Hd6UZAgPBAUZplnmPMQ",
+				"title": "8K Wildlife of Gondwana Game Reserve, Africa - 7 HOURS of Amazing Wild Animals (NO MUSIC)",
+				"description": "This 7- hour relaxation video will take you to the private game reserve in South Africa. Experience the animal diversity of the ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/lXoH1oQJvHo/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/lXoH1oQJvHo/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/lXoH1oQJvHo/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "4K Relaxation Channel",
+				"liveBroadcastContent": "none",
+				"publishTime": "2021-07-02T13:00:34Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "W1H7qjTMNa_qtPc5vLj4M-BvxbI",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "EColTNIbOko"
+			},
+			"snippet": {
+				"publishedAt": "2021-03-30T15:00:04Z",
+				"channelId": "UCzIJVoH2RGS9Pjzab9rywZg",
+				"title": "Forests from Above (No Sound) — 10 Hours Screensaver of 4K UHD Drone Aerials",
+				"description": "See 10 gorgeous hours of forests around the world from above in this video with no sound. This cinematic aerial drone video of ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/EColTNIbOko/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/EColTNIbOko/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/EColTNIbOko/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Aerial Earth 🌎",
+				"liveBroadcastContent": "none",
+				"publishTime": "2021-03-30T15:00:04Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "QNgfYq3EsHyaprZozSH9IpJILT4",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "czCHvDY23fc"
+			},
+			"snippet": {
+				"publishedAt": "2015-11-24T07:34:10Z",
+				"channelId": "UCCkmgsl8W18oR6c_W7UZ1lQ",
+				"title": "4K Autumn Forest - Relaxing Nature Video &amp; River Sounds - NO MUSIC - 1 hour Ultra HD 2160p",
+				"description": "One hour collection of 4K (UHD) footage and sound recordings of beautiful nature in its colorful autumn glory. The sights and ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/czCHvDY23fc/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/czCHvDY23fc/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/czCHvDY23fc/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "TheSilentWatcher",
+				"liveBroadcastContent": "none",
+				"publishTime": "2015-11-24T07:34:10Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "X_w3rG5yRGEg3MyvXp7Nmo9EWqc",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "eKFTSSKCzWA"
+			},
+			"snippet": {
+				"publishedAt": "2013-07-02T08:01:18Z",
+				"channelId": "UC4UWbQ23IbWwU-XG7XIWxvQ",
+				"title": "Relaxing Nature Sounds for Sleeping-Natural Calm Forest Waterfall Music Meditation Sound for Study",
+				"description": "Relaxing nature sounds for sleeping, is something that has been tested in study after study. Repeated studying of sounds of ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/eKFTSSKCzWA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/eKFTSSKCzWA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/eKFTSSKCzWA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "johnnielawson",
+				"liveBroadcastContent": "none",
+				"publishTime": "2013-07-02T08:01:18Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "j9XQT1CL53YFmtSEOMgcr95S-6Q",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "qRTVg8HHzUo"
+			},
+			"snippet": {
+				"publishedAt": "2018-05-25T12:30:01Z",
+				"channelId": "UCjoFckSzE1jUM_kmtVHNlKg",
+				"title": "8 Hours of Birds Singing on the Lakeshore and Water Sounds - Relaxing Nature Sounds - Mount Shuksan",
+				"description": "Find your absolutely beautiful and serene place and listen to nature sounds, birds signing and relaxing water sounds with ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/qRTVg8HHzUo/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/qRTVg8HHzUo/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/qRTVg8HHzUo/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Soundscapes",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-05-25T12:30:01Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "B6ChRAcwR5mEllPQ4MPbVCzOdjk",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "ipf7ifVSeDU"
+			},
+			"snippet": {
+				"publishedAt": "2020-05-17T17:30:04Z",
+				"channelId": "UCJuMbdKSMThk2RpALASyXVQ",
+				"title": "Relaxing Meadow with Ambient Nature Sounds, Wildflowers, and Mountain View - 8 Hours",
+				"description": "Enjoy the relaxing ambience of a mountain meadow with ambient nature sounds for calming and focus. Listen to the relaxing ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/ipf7ifVSeDU/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/ipf7ifVSeDU/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/ipf7ifVSeDU/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Calmed By Nature",
+				"liveBroadcastContent": "none",
+				"publishTime": "2020-05-17T17:30:04Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "1ELf-DkvV_mBcyiN6VjQsFzAAKQ",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "SZ16mn757MA"
+			},
+			"snippet": {
+				"publishedAt": "2015-12-15T17:00:03Z",
+				"channelId": "UC4jWo5kiyOCt4PnvF4jbaLg",
+				"title": "3 HOURS of Nature Sounds Sleep Meditation &quot;Windy Enchanted Forest&quot; - No Music",
+				"description": "3 hours of soothing relaxing nature sounds without music (details below) Join our community/see our products: ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/SZ16mn757MA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/SZ16mn757MA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/SZ16mn757MA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "The Honest Guys - Meditations - Relaxation",
+				"liveBroadcastContent": "none",
+				"publishTime": "2015-12-15T17:00:03Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "Jv_P0fny25J1t7XNohOsc-XtWKs",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "-sX6IXp_IX0"
+			},
+			"snippet": {
+				"publishedAt": "2020-10-19T13:43:07Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "11 Hours of Enchanting Autumn Scenes (NO MUSIC) + Forest Sounds for Focus, Study, Sleep",
+				"description": "PIANO MUSIC VERSION @ https://youtu.be/glENND73k4Q | BUY/DVD ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/-sX6IXp_IX0/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/-sX6IXp_IX0/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/-sX6IXp_IX0/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2020-10-19T13:43:07Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "McNbeyCoyKmnFajpF1PL-mOXqi4",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "wJIbhSYteK0"
+			},
+			"snippet": {
+				"publishedAt": "2018-02-09T16:18:38Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "3 HOURS of Amazing Colorful Reef Sea Life  in HD 1080p (No Music) Tahiti, Raratonga, Indonesia",
+				"description": "MUSIC VERSION @ https://youtu.be/eSRj847AY8U | Watch Free w/ AMAZON PRIME: http://a.co/0KMCyId | Watch via ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/wJIbhSYteK0/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/wJIbhSYteK0/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/wJIbhSYteK0/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-02-09T16:18:38Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "cQJohRfN2QKLzb8KyfzkFrkC1rc",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "E7qRkUYu580"
+			},
+			"snippet": {
+				"publishedAt": "2016-08-28T23:12:37Z",
+				"channelId": "UC8az6OzymjQfTWFzsTuOfYw",
+				"title": "30 min relaxing ocean waves - high quality sound - no music - HD video of a beautiful misty beach",
+				"description": "Beautiful 30 minute video of ocean waves rolling into a misty beach surrounded by high cliffs. Enjoy the natural sounds of the ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/E7qRkUYu580/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/E7qRkUYu580/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/E7qRkUYu580/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Peaceful Scenes",
+				"liveBroadcastContent": "none",
+				"publishTime": "2016-08-28T23:12:37Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "oHVVnBvEDVZIeykBUKRpuXEOg6s",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "PyFN_FYwqvc"
+			},
+			"snippet": {
+				"publishedAt": "2020-09-30T13:00:05Z",
+				"channelId": "UCg72Hd6UZAgPBAUZplnmPMQ",
+				"title": "4K Virtual Hike through Canadian Forest (with Nature Sounds) - Incredible Nature of British Columbia",
+				"description": "Take a virtual hike through a sun-lit forest and listen nature sounds! Enjoy the natural peace along the forest paths and explore the ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/PyFN_FYwqvc/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/PyFN_FYwqvc/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/PyFN_FYwqvc/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "4K Relaxation Channel",
+				"liveBroadcastContent": "none",
+				"publishTime": "2020-09-30T13:00:05Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "rUeOCcd17WopUvIncgueVMY4Ym8",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "SS5Mm8cysk8"
+			},
+			"snippet": {
+				"publishedAt": "2020-04-18T16:31:05Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "&quot;A Day In Paradise&quot; (No Music) 4.5 Hour Pure Nature Relaxation Film - Fiji HD [Remastered 4K]",
+				"description": "MUSIC VERSION @ https://youtu.be/veLIpC6AbLw | WATCH ON DEMAND ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/SS5Mm8cysk8/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/SS5Mm8cysk8/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/SS5Mm8cysk8/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2020-04-18T16:31:05Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "2J-aYf9LxxKWNUZXvz1feKHml84",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "BHACKCNDMW8"
+			},
+			"snippet": {
+				"publishedAt": "2019-05-07T14:41:33Z",
+				"channelId": "UCI-Ho-GaKYbtMzXJWmWAsrg",
+				"title": "3 Hours of Amazing Nature Scenery &amp; Relaxing Music for Stress Relief.",
+				"description": "Enjoy 3 hours of amazing nature scenery. This video features relaxing music that is ideal for sleep, study, meditation and yoga.",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/BHACKCNDMW8/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/BHACKCNDMW8/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/BHACKCNDMW8/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Cat Trumpet",
+				"liveBroadcastContent": "none",
+				"publishTime": "2019-05-07T14:41:33Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "h-0x490tGCijUY1bs0aU1kBmsd4",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "E8fiyj1hNwk"
+			},
+			"snippet": {
+				"publishedAt": "2021-06-02T15:00:08Z",
+				"channelId": "UCDmvEp5Rtjw817rMw_Z-S1A",
+				"title": "Peaceful River Flowing Sound. Gentle River, Relaxing Nature Sounds. White Noise for Sleep, Study.",
+				"description": "Peaceful River Flowing Sound. Gentle River, Relaxing Nature Sounds. White Noise for Sleep, Study. Enjoy the relaxing river ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/E8fiyj1hNwk/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/E8fiyj1hNwk/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/E8fiyj1hNwk/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Zilla",
+				"liveBroadcastContent": "none",
+				"publishTime": "2021-06-02T15:00:08Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "ifmEpr2w-41528LxjL8Rwoxzeps",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "1t7g690boao"
+			},
+			"snippet": {
+				"publishedAt": "2017-02-27T12:00:00Z",
+				"channelId": "UCCkmgsl8W18oR6c_W7UZ1lQ",
+				"title": "4K Forest Stream - Relaxing River Sounds - No Birds - Ultra HD Nature Video -  Relax/ Sleep/ Study",
+				"description": "Relax, sleep, study, work or meditate with the energizing sound and the beauty of a pure mountain stream cascading trough the ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/1t7g690boao/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/1t7g690boao/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/1t7g690boao/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "TheSilentWatcher",
+				"liveBroadcastContent": "none",
+				"publishTime": "2017-02-27T12:00:00Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "dsIOMi64FcaxXh-ont1MBslwi-w",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "PwEO5JxnHiA"
+			},
+			"snippet": {
+				"publishedAt": "2018-03-29T11:00:01Z",
+				"channelId": "UC4jWo5kiyOCt4PnvF4jbaLg",
+				"title": "12 HOURS NATURE SOUNDS: River in The Valley (NO MUSIC) Sleep, relaxation, Study",
+				"description": "12 hours of deeply relaxing nature sounds without music. (details below) Join our community/see our products: ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/PwEO5JxnHiA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/PwEO5JxnHiA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/PwEO5JxnHiA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "The Honest Guys - Meditations - Relaxation",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-03-29T11:00:01Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "6as8gedwrajgLGN2eLudQ6oZbGs",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "BEkeLmy14PA"
+			},
+			"snippet": {
+				"publishedAt": "2012-11-30T12:37:37Z",
+				"channelId": "UCX2gnwcVEQrfvS9nvfs6YlA",
+				"title": "Sound of nature - birds song (no music) 180 mins",
+				"description": "I've recorded this sound in my house in the village in Poland. I also made some modification with program \"Audacity\".",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/BEkeLmy14PA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/BEkeLmy14PA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/BEkeLmy14PA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Sounds of Nature",
+				"liveBroadcastContent": "none",
+				"publishTime": "2012-11-30T12:37:37Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "MlRtlfTj_ufqCKD5s8bei_v4Yww",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "fWPVMpyl8Mw"
+			},
+			"snippet": {
+				"publishedAt": "2016-07-26T14:27:00Z",
+				"channelId": "UCtyPOQll9WAacpTor1IeeIQ",
+				"title": "9 HOURS Nature Sounds. Relax, No Music, Sleep, Study, Water Sounds, Meditation Rain [Skyrim]",
+				"description": "9 hours of soothing relaxing nature sounds without music. Play on background while chilling out, sleeping, studying or doing any ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/fWPVMpyl8Mw/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/fWPVMpyl8Mw/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/fWPVMpyl8Mw/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Relax",
+				"liveBroadcastContent": "none",
+				"publishTime": "2016-07-26T14:27:00Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "9VcdTqpdXnQw2kCWZIwmyW2UxtQ",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "lNB8iwiQb9k"
+			},
+			"snippet": {
+				"publishedAt": "2020-08-31T12:00:24Z",
+				"channelId": "UCKnnIBx2EeU_EfSgnrGEosg",
+				"title": "Birds Singing Without Music, 8 Hour Bird Sounds Relaxation, Soothing Nature Sounds, Birds Chirping",
+				"description": "8-Hours | Sounds of birds singing without music. Enjoy nothing but robins, blackbirds and several other bird types and listen to ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/lNB8iwiQb9k/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/lNB8iwiQb9k/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/lNB8iwiQb9k/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Deep Sleep & Relaxing Music Channel",
+				"liveBroadcastContent": "none",
+				"publishTime": "2020-08-31T12:00:24Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "qF-M8q9NzRu3yKe0GWssPMq7P0g",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "lM02vNMRRB0"
+			},
+			"snippet": {
+				"publishedAt": "2018-08-27T23:52:39Z",
+				"channelId": "UC4lp9Emg1ci8eo2eDkB-Tag",
+				"title": "7 HOUR 4K DRONE FILM: &quot;Earth from Above&quot; + Music by Nature Relaxation™ (Ambient AppleTV Style)",
+				"description": "NEW* \"ISLANDS FROM ABOVE\" (8 HR) @ https://youtu.be/b7Cl7S0pLRw | 10 HOUR MIX @ https://youtu.be/683p4Ubg2NU ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/lM02vNMRRB0/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/lM02vNMRRB0/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/lM02vNMRRB0/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Nature Relaxation Films",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-08-27T23:52:39Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "6kpM_E27XLf4N7QG1Ed1P4wNAjk",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "0Y9cJWUAKq4"
+			},
+			"snippet": {
+				"publishedAt": "2018-10-03T21:10:04Z",
+				"channelId": "UCfVJ_-zdASq6HR-ocI8yTww",
+				"title": "3 Hours Music, No Loops. Inner Peace, Relaxing, Soothing Music",
+				"description": "This track is a collection of our tracks for relaxation. 00:00 Relaxing Music For Stress Relief, Emotional Music, Harp Music, ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/0Y9cJWUAKq4/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/0Y9cJWUAKq4/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/0Y9cJWUAKq4/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Music for Body and Spirit - Meditation Music",
+				"liveBroadcastContent": "none",
+				"publishTime": "2018-10-03T21:10:04Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "JnAMz3qfKUxLW4ZX8lrup6VrrCY",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "KLMhVJlOb3E"
+			},
+			"snippet": {
+				"publishedAt": "2019-05-03T09:24:27Z",
+				"channelId": "UCI-Ho-GaKYbtMzXJWmWAsrg",
+				"title": "Relaxing Aquarium Fish Tank Sounds ~ NO MUSIC 🐟",
+				"description": "Enjoy 3 hours of relaxing aquarium fish tank sounds. This video features a stunning aquarium that is ideal for sleep, study and ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/KLMhVJlOb3E/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/KLMhVJlOb3E/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/KLMhVJlOb3E/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "Cat Trumpet",
+				"liveBroadcastContent": "none",
+				"publishTime": "2019-05-03T09:24:27Z"
+			}
+		},
+		{
+			"kind": "youtube#searchResult",
+			"etag": "XZuW4SVfy2IwclKWylOc-dxkmD8",
+			"id": {
+				"kind": "youtube#video",
+				"videoId": "Ui0zKLxaAxo"
+			},
+			"snippet": {
+				"publishedAt": "2016-11-17T06:29:32Z",
+				"channelId": "UCNi5rXUflxRVE7JlZeN0oAw",
+				"title": "Zen Garden - Infinite Bliss - Nature Sounds Only- (No Music)",
+				"description": "Zen Garden - Infinite Bliss with Nature Sounds only. The peaceful beauty of a Zen Garden, with only nature sounds. The tranquil ...",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/Ui0zKLxaAxo/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/Ui0zKLxaAxo/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/Ui0zKLxaAxo/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					}
+				},
+				"channelTitle": "zenchantment",
+				"liveBroadcastContent": "none",
+				"publishTime": "2016-11-17T06:29:32Z"
+			}
+		}
+	]
+}

@@ -2,33 +2,13 @@ import Head from 'next/head';
 import Navigation from '../components/navigation/Navigation';
 import Banner from '../components/banner/Banner';
 import CardList from '../components/card/CardList';
+import { parseVideos } from '../lib/youTube';
+import videosData from '../data/videos.json';
 import styles from '../styles/Home.module.css';
 
-const videos = [
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	},
-	{
-		imageURL: '/toucan.jpg'
-	}
-];
-
 export default function Home() {
+	const videos = parseVideos(videosData);
+
 	return (
 		<>
 			<Head>
