@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
@@ -5,14 +6,15 @@ import styles from './Navigation.module.css';
 
 function Navigation({ userName }) {
 	const router = useRouter();
+	const [showDropDown, setShowDropDown] = useState(false);
 
 	const onHomeClick = event => {
-		event.preventDefault();
+		// event.preventDefault();
 		router.push('/');
 	};
 
 	const onListClick = event => {
-		event.preventDefault();
+		// event.preventDefault();
 		router.push('/browse/list');
 	};
 
@@ -25,13 +27,15 @@ function Navigation({ userName }) {
 			</ul>
 			<div className={styles.dropDownContainer}>
 				<div>
-					<button className={styles.button}>
+					<button className={styles.button} onClick={() => {setShowDropDown(!showDropDown)}}>
 						<span className={styles.userName}>{userName}</span>
 					</button>
-					<div className={styles.dropDown}>
-						<Link className={styles.logOut} href='/login'>Log Out</Link>
-						<div className={styles.lineWrapper}></div>
-					</div>
+					{showDropDown && (
+						<div className={styles.dropDown}>
+							<Link className={styles.logOut} href='/login'>Log Out</Link>
+							<div className={styles.lineWrapper}></div>
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>
