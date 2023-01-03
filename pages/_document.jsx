@@ -7,7 +7,6 @@ class Document2 extends Document {
 				<Head>
 					<meta name='title' content='NatureFlix' />
 					<meta name='description' content='Watch Videos to Admire the Beauty of Nature' />
-					<title>NatureFlix</title>
 					<link rel='icon' type='image/x-icon' href='/favicon.ico' />
 					<link rel='preconnect' href='https://fonts.googleapis.com' />
 					<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
