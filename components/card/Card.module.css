@@ -1,0 +1,43 @@
+.container {
+	margin-right: 0.25rem;
+	cursor: pointer;
+}
+
+.small {
+	position: relative;
+	width: 300px;
+	min-width: 300px;
+	height: 170px;
+	min-height: 170px;
+}
+
+.medium {
+	position: relative;
+	width: 158px;
+	min-width: 158px;
+	height: 280px;
+	min-height: 280px;
+}
+
+.large {
+	position: relative;
+	width: 218px;
+	min-width: 218px;
+	height: 434px;
+	min-height: 434px;
+}
+
+.image {
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+
+	border-radius: 0.375rem;
+	object-fit: cover;
+
+	object-position: center;
+	display: block;
+
+	max-width: 100%;
+}
