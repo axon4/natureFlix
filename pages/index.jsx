@@ -2,19 +2,21 @@ import Head from 'next/head';
 import Navigation from '../components/navigation/Navigation';
 import Banner from '../components/banner/Banner';
 import CardList from '../components/card/CardList';
-import { parseVideos } from '../lib/youTube';
-import videosData from '../data/videos.json';
+import { getVideos } from '../srv/youTube';
 import styles from '../styles/Home.module.css';
 
-export function getServerSideProps() {
-	const videos = parseVideos(videosData);
+export async function getServerSideProps() {
+	const natureVideos = await getVideos('nature');
+	const cookingVideos = await getVideos('cooking', 'UCj4KP216972cPp2w_BAHy8g');
+	const animalVideos = await getVideos('animal');
+	const popularVideos = await getVideos('popular');
 
 	return {
-		props: { videos }
+		props: { natureVideos, cookingVideos, animalVideos, popularVideos }
 	};
 };
 
-export default function Home({ videos }) {
+function Home({ natureVideos, cookingVideos }) {
 	return (
 		<>
 			<Head>
@@ -23,10 +25,13 @@ export default function Home({ videos }) {
 			<main className={styles.container}>
 				<Navigation userName='test@test.com' />
 				<Banner title='Title' subTitle='SubTitle' imageURL='/toucan.jpg' />
-				<CardList title='Nature' size='large' videos={videos} />
-				<CardList title='Nature' size='medium' videos={videos} />
-				<CardList title='Nature' size='large' videos={videos} />
+				<CardList title='Nature' size='large' videos={natureVideos} />
+				<CardList title='Cooking' size='small' videos={cookingVideos} />
+				<CardList title='Animals' size='medium' videos={animalVideos} />
+				<CardList title='Popular' size='small' videos={popularVideos} />
 			</main>
 		</>
 	);
 };
+
+export default Home;
