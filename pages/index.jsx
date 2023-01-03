@@ -16,7 +16,7 @@ export async function getServerSideProps() {
 	};
 };
 
-function Home({ natureVideos, cookingVideos }) {
+function Home({ natureVideos, cookingVideos, animalVideos, popularVideos }) {
 	return (
 		<>
 			<Head>
