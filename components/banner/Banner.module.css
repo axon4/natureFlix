@@ -1,0 +1,119 @@
+.container {
+	width: 100%;
+	height: 80vh;
+	position: relative;
+}
+
+.leftWrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.left {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	height: 100%;
+	flex-direction: column;
+	margin-top: 6rem;
+}
+
+.nSeriesWrapper {
+	display: flex;
+}
+
+.n {
+	font-size: 3.75rem;
+	line-height: 1;
+	color: var(--red);
+	font-weight: 800;
+}
+
+.series {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--gray20);
+	align-self: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 800;
+	color: var(--white10);
+	-webkit-text-stroke: 2px var(--black);
+}
+
+.subTitle {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: var(--white10);
+	-webkit-text-stroke: 1px gray;
+}
+
+.buttonWrapper {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.buttonText {
+	color: rgb(31, 41, 55);
+	font-weight: 600;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	padding-left: 0.25rem;
+	text-align: center;
+}
+
+.hero {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0px;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
+	background-image: linear-gradient(to top, var(--tw-gradient-stops));
+	--tw-gradient-from: var(--black);
+	background-size: cover;
+	background-position: "50% 50%";
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	margin-top: 1.25rem;
+	border-radius: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: var(--white10);
+	width: 8rem;
+}
+
+@media (min-width: 768px) {
+	.left {
+		width: 40%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.title {
+		font-size: 3.75rem;
+		line-height: 1;
+	}
+
+	.subTitle {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	.buttonText {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+}
