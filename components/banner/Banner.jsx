@@ -18,7 +18,7 @@ function Banner({ title, subTitle, imageURL }) {
 					<h2 className={styles.subTitle}>{subTitle}</h2>
 					<div className={styles.buttonWrapper}>
 						<button className={styles.button} onClick={onClick}>
-							<Image src='/play.svg' alt='Play' width={32} height={32} />
+							<Image src='/play.svg' alt='play' width={32} height={32} />
 							<span className={styles.buttonText}>Play</span>
 						</button>
 					</div>

@@ -32,7 +32,7 @@ function Navigation({ userName }) {
 				<div>
 					<button className={styles.button} onClick={() => {setShowDropDown(!showDropDown)}}>
 						<span className={styles.userName}>{userName}</span>
-						<Image src='/chevronDown.svg' alt='Toggle DropDown' width={24} height={24} />
+						<Image src='/chevronDown.svg' alt='toggle dropDown' width={24} height={24} />
 					</button>
 					{showDropDown && (
 						<div className={styles.dropDown}>
