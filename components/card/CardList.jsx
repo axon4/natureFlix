@@ -1,7 +1,7 @@
 import Card from './Card';
 import styles from './CardList.module.css';
 
-function CardList({ title, size, videos }) {
+function CardList({ title, size, videos = [] }) {
 	return (
 		<section className={styles.container}>
 			<h2 className={styles.title}>{title}</h2>

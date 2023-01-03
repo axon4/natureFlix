@@ -6,9 +6,15 @@ import { parseVideos } from '../lib/youTube';
 import videosData from '../data/videos.json';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export function getServerSideProps() {
 	const videos = parseVideos(videosData);
 
+	return {
+		props: { videos }
+	};
+};
+
+export default function Home({ videos }) {
 	return (
 		<>
 			<Head>
