@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Logo from '../components/logo/Logo';
+import { magicLogIn } from '../srv/magic';
 import styles from '../styles/logIn.module.css';
 
 function logIn() {
@@ -14,11 +15,17 @@ function logIn() {
 		setEMailValidity(target.validity.valid);
 	};
 
-	const onClick = event => {
+	const onClick = async event => {
 		event.preventDefault();
 
 		if (eMailValidity) {
-			router.push('/');
+			try {
+				const DIDToken = await magicLogIn(eMail);
+
+				console.log('token', DIDToken);
+			} catch (error) {
+				console.error('Error Logging In', error);
+			};
 		};
 	};
 
