@@ -95,11 +95,11 @@ button {
 
 @media (prefers-color-scheme: dark) {
 	html {
-		color-scheme: dark;
+		/* color-scheme: dark; */
 	}
 
 	body {
-		background: black;
+		/* background: black; */
 		color: white;
 	}
 }
