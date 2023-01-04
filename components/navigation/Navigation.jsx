@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
+import Logo from '../logo/Logo';
 import styles from './Navigation.module.css';
-import Image from 'next/image';
 
 function Navigation({ userName }) {
 	const router = useRouter();
@@ -21,9 +22,7 @@ function Navigation({ userName }) {
 
 	return (
 		<nav className={classNames(styles.container, styles.wrapper)}>
-			<Link className={classNames(styles.logoLink, styles.logoWrapper)} href='/'>
-				<Image src='/natureFlix.svg' alt='NatureFlix' width={128} height={32} />
-			</Link>
+			<Logo />
 			<ul className={styles.items}>
 				<li className={styles.item1} onClick={onHomeClick}>Home</li>
 				<li className={styles.item2} onClick={onListClick}>List</li>
@@ -36,7 +35,7 @@ function Navigation({ userName }) {
 					</button>
 					{showDropDown && (
 						<div className={styles.dropDown}>
-							<Link className={styles.logOut} href='/login'>Log Out</Link>
+							<Link className={styles.logOut} href='/logIn'>Log Out</Link>
 							<div className={styles.lineWrapper}></div>
 						</div>
 					)}
