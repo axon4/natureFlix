@@ -22,6 +22,10 @@ function logIn() {
 			try {
 				const DIDToken = await magicLogIn(eMail);
 
+				if (DIDToken) {
+					router.push('/');
+				};
+
 				console.log('token', DIDToken);
 			} catch (error) {
 				console.error('Error Logging In', error);
