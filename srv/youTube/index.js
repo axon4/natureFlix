@@ -2,7 +2,7 @@ import { parseVideos } from '../../lib/youTube';
 
 export async function getVideos(query, channelID = null) {
 	try {
-		const queryArguments = {
+		const queryParameters = {
 			key: process.env.YOUTUBE_DATA_API_KEY,
 			q: query + 'no music',
 			type: 'video',
@@ -12,9 +12,10 @@ export async function getVideos(query, channelID = null) {
 		};
 	
 		if (channelID) {
-			queryArguments.channelId = channelID;
+			queryParameters.channelId = channelID;
 		};
-	
+
+		const queryArguments = new URLSearchParams(queryParameters);
 		const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?${queryArguments}`);
 		const data = await response.json();
 
