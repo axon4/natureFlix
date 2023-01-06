@@ -36,6 +36,18 @@ function Navigation() {
 		router.push('/browse/list');
 	};
 
+	const onLogOut = async event => {
+		try {
+			await magic.user.logout();
+
+			if (await magic.user.isLoggedIn()) {
+				throw new Error('Still Logged In');
+			};
+		} catch (error) {
+			console.error('Error Logging Out', error);
+		};
+	};
+
 	return (
 		<nav className={classNames(styles.container, styles.wrapper)}>
 			<Logo />
@@ -51,7 +63,7 @@ function Navigation() {
 					</button>
 					{showDropDown && (
 						<div className={styles.dropDown}>
-							<Link className={styles.logOut} href='/logIn'>Log Out</Link>
+							<Link className={styles.logOut} href='/logIn' onClick={onLogOut}>Log Out</Link>
 							<div className={styles.lineWrapper}></div>
 						</div>
 					)}
