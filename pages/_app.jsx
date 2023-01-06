@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Spinner from '../components/spinner/Spinner';
 import magic from '../lib/magic';
 import '../styles/globals.css';
 
@@ -36,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 		};
 	}, [router]);
 
-	return loading ? <div>Loading...</div> : <Component {...pageProps} />
+	return loading ? <Spinner /> : <Component {...pageProps} />
 };
 
 export default MyApp;
