@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Logo from '../components/logo/Logo';
@@ -8,7 +8,20 @@ import styles from '../styles/logIn.module.css';
 function logIn() {
 	const [ eMail, setEMail ] = useState('');
 	const [ eMailValidity, setEMailValidity ] = useState(false);
+	const [ loading, setLoading ] = useState(false);
 	const router = useRouter();
+
+	useEffect(() => {
+		const unSetLoading = () => {setLoading(false)};
+
+		router.events.on('routeChangeComplete', unSetLoading);
+		router.events.on('routeChangeError', unSetLoading);
+
+		return () => {
+			router.events.off('routeChangeComplete', unSetLoading);
+			router.events.off('routeChangeError', unSetLoading);
+		};
+	}, [router]);
 
 	const onChange = ({ target }) => {
 		setEMail(target.value);
@@ -20,13 +33,14 @@ function logIn() {
 
 		if (eMailValidity) {
 			try {
+				setLoading(true);
+
 				const DIDToken = await magicLogIn(eMail);
 
 				if (DIDToken) {
 					router.push('/');
 				};
 
-				console.log('token', DIDToken);
 			} catch (error) {
 				console.error('Error Logging In', error);
 			};
@@ -49,7 +63,9 @@ function logIn() {
 						<h1 className={styles.heading}>Log In</h1>
 						<input className={styles.input} type='email' placeholder='EMail' onChange={onChange} />
 						{!eMailValidity && eMail && <pre className={styles.error}>InValid EMail Address</pre>}
-						<button className={styles.button} type='submit' onClick={onClick}>Log In</button> 
+						<button className={styles.button} type='submit' onClick={onClick}>
+							{loading ? 'Logging In...' : 'Log In'}
+						</button> 
 					</form>
 				</main>
 			</div>
