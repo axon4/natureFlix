@@ -23,7 +23,7 @@ function Home({ natureVideos, cookingVideos, animalVideos, oceanVideos }) {
 				<title>NatureFlix</title>
 			</Head>
 			<main className={styles.container}>
-				<Navigation userName='test@test.com' />
+				<Navigation />
 				<Banner title='Title' subTitle='SubTitle' imageURL='/toucan.jpg' />
 				<CardList title='Nature' size='large' videos={natureVideos} />
 				<CardList title='Cooking' size='small' videos={cookingVideos} />

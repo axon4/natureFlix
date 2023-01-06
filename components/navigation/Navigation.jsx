@@ -1,14 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Logo from '../logo/Logo';
+import magic from '../../lib/magic';
 import styles from './Navigation.module.css';
 
-function Navigation({ userName }) {
+function Navigation() {
+	const [ userName, setUserName ] = useState('');
+	const [ showDropDown, setShowDropDown ] = useState(false);
 	const router = useRouter();
-	const [showDropDown, setShowDropDown] = useState(false);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const { email: eMail } = await magic.user.getMetadata();
+
+				if (eMail) {
+					setUserName(eMail);
+				};
+			} catch (error) {
+				console.error('Error Getting EMail', error);
+			};
+		})();
+	}, []);
 
 	const onHomeClick = event => {
 		// event.preventDefault();
