@@ -27,12 +27,14 @@ function Navigation() {
 	}, []);
 
 	const onHomeClick = event => {
-		// event.preventDefault();
+		event.preventDefault();
+
 		router.push('/');
 	};
 
 	const onListClick = event => {
-		// event.preventDefault();
+		event.preventDefault();
+		
 		router.push('/browse/list');
 	};
 
