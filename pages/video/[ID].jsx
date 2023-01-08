@@ -1,10 +1,17 @@
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
+import classNames from 'classnames';
 import styles from '../../styles/VideoPage.module.css';
 
 Modal.setAppElement('#__next');
 
-function VideoPage() {
+function VideoPage({
+	title = 'Title',
+	description = 'Description',
+	publishTime = new Date().toISOString(),
+	channel = 'Channel',
+	views = 777777
+}) {
 	const router = useRouter();
 
 	return (
@@ -23,6 +30,25 @@ function VideoPage() {
 					width='100%'
 					height='360'
 				/>
+				<section className={classNames(styles.modalBody, styles.modalBodyContent)}>
+					<div className={styles.column1}>
+						<h5 className={styles.publishTime}>{publishTime}</h5>
+						<hgroup>
+							<h1 className={styles.title}>{title}</h1>
+							<p className={styles.description}>{description}</p>
+						</hgroup>
+					</div>
+					<div className={styles.column2}>
+						<hgroup className={classNames(styles.metaDataWrapper, styles.metaData)}>
+							<h5 className={styles.metaDataKey}>Channel:</h5>
+							<p className={styles.metaDataValue}>{channel}</p>
+						</hgroup>
+						<hgroup className={classNames(styles.metaDataWrapper, styles.metaData)}>
+							<h5 className={styles.metaDataKey}>Views:</h5>
+							<p className={styles.metaDataValue}>{views}</p>
+						</hgroup>
+					</div>
+				</section>
 			</Modal>
 		</main>
 	);

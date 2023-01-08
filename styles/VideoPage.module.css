@@ -6,7 +6,7 @@
 	width: 800px;
 	bottom: 40px;
 	background-color: var(--black40);
-	top: 10%;
+	top: 5%;
 	outline: none;
 	border-radius: 10px;
 	border: 1px solid var(--shadow10);
@@ -35,4 +35,72 @@
 .iFrame {
 	border-radius: 10px 10px 0px 0px;
 	composes: boxShadow;
+}
+
+.modalBody {
+	padding: 0 3rem;
+}
+
+.modalBodyContent {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+	column-gap: 2em;
+}
+
+.column1 {
+	max-height: 23rem;
+	overflow-y: hidden;
+	overflow-y: scroll;
+}
+
+.publishTime {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+	color: var(--green10);
+}
+
+.text {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	color: var(--white10);
+}
+
+.description {
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.column2 {
+	color: var(--white10);
+	line-height: 1.75rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.metaDataWrapper {
+	margin-top: 1.5rem;
+}
+
+.metaData {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	margin-left: 0px;
+	overflow-wrap: break-word;
+}
+
+.metaDataKey {
+	color: var(--gray10);
+}
+
+.metaDataValue {
+	color: var(--white30);
+	margin: 0px;
+}
+
+@media (max-width: 768px) {
+	.modal {
+		width: 100%;
+	}
 }
