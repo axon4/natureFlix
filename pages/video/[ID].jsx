@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import classNames from 'classnames';
+import Navigation from '../../components/navigation/Navigation';
 import { getVideo } from '../../srv/youTube';
 import styles from '../../styles/VideoPage.module.css';
 
@@ -32,6 +33,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 
 	return (
 		<main>
+			<Navigation />
 			<Modal
 				className={styles.modal}
 				overlayClassName={styles.overlay}
