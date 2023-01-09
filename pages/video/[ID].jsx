@@ -1,18 +1,13 @@
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import classNames from 'classnames';
+import { getVideo } from '../../srv/youTube';
 import styles from '../../styles/VideoPage.module.css';
 
 Modal.setAppElement('#__next');
 
-export async function getStaticProps() {
-	const video = {
-		title: 'Title',
-		description: 'Description',
-		publishTime: new Date().toISOString(),
-		channel: 'Channel',
-		views: 777777
-	}
+export async function getStaticProps({ params }) {
+	const video = await getVideo(params.ID);
 
 	return {
 		props: {...video},
@@ -45,7 +40,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 			>
 				<iframe
 					className={styles.iFrame}
-					src={`https://www.youtube.com/embed/J01qyM3Y9VQ?autoplay=0&controls=0&rel=0&modestbranding=1`}
+					src={`https://www.youtube.com/embed/${router.query.ID}?autoplay=0&controls=0&rel=0&modestbranding=1`}
 					type='text/html'
 					frameBorder='0'
 					width='100%'
