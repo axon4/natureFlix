@@ -5,13 +5,34 @@ import styles from '../../styles/VideoPage.module.css';
 
 Modal.setAppElement('#__next');
 
-function VideoPage({
-	title = 'Title',
-	description = 'Description',
-	publishTime = new Date().toISOString(),
-	channel = 'Channel',
-	views = 777777
-}) {
+export async function getStaticProps() {
+	const video = {
+		title: 'Title',
+		description: 'Description',
+		publishTime: new Date().toISOString(),
+		channel: 'Channel',
+		views: 777777
+	}
+
+	return {
+		props: {...video},
+		revalidate: 70
+	};
+};
+
+export async function getStaticPaths() {
+	const bannerVideoIDs = ['J01qyM3Y9VQ'];
+	const paths = bannerVideoIDs.map(ID => ({
+		params: { ID }
+	}));
+
+	return {
+		paths,
+		fallback: 'blocking'
+	};
+};
+
+function VideoPage({ title, description, publishTime, channel, views }) {
 	const router = useRouter();
 
 	return (

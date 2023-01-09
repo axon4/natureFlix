@@ -24,7 +24,7 @@ function Home({ natureVideos, cookingVideos, animalVideos, oceanVideos }) {
 			</Head>
 			<main className={styles.container}>
 				<Navigation />
-				<Banner title='Title' subTitle='SubTitle' imageURL='/toucan.jpg' videoID='videoID' />
+				<Banner title='Title' subTitle='SubTitle' imageURL='/toucan.jpg' videoID='J01qyM3Y9VQ' />
 				<CardList title='Nature' size='large' videos={natureVideos} />
 				<CardList title='Cooking' size='small' videos={cookingVideos} />
 				<CardList title='Animals' size='medium' videos={animalVideos} />
