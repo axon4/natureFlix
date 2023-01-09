@@ -1,4 +1,5 @@
 import { parseVideos, parseVideo } from '../../lib/youTube';
+import mockVideos from '../../data/videos.json';
 
 export async function getVideos(query, channelID = null) {
 	try {
@@ -10,22 +11,22 @@ export async function getVideos(query, channelID = null) {
 			safeSearch: 'strict',
 			maxResults: 27
 		};
-	
+
 		if (channelID) {
 			queryParameters.channelId = channelID;
 		};
 
 		const queryArguments = new URLSearchParams(queryParameters);
 		const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?${queryArguments}`);
-		const data = await response.json();
+		const data = process.env.MOCK ? mockVideos : await response.json();
 
 		if (data?.error) {
 			throw new Error(data.error);
 		};
 
 		const videos = parseVideos(data);
-	
-		return videos;	
+
+		return videos;
 	} catch (error) {
 		console.error('Error Getting Videos:', error);
 
