@@ -3,6 +3,7 @@ import Navigation from '../components/navigation/Navigation';
 import Banner from '../components/banner/Banner';
 import CardList from '../components/card/CardList';
 import { getVideos } from '../srv/youTube';
+import { graphQL } from '../srv/hasura';
 import styles from '../styles/Home.module.css';
 
 export async function getServerSideProps() {
@@ -10,6 +11,15 @@ export async function getServerSideProps() {
 	const cookingVideos = await getVideos('cooking', 'UCj4KP216972cPp2w_BAHy8g');
 	const animalVideos = await getVideos('animal');
 	const oceanVideos = await getVideos('ocean');
+
+	await graphQL(`query {
+		users {
+			ID
+			email
+			issuer
+			publicAddress
+		}
+	}`);
 
 	return {
 		props: { natureVideos, cookingVideos, animalVideos, oceanVideos }
