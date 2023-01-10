@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Logo from '../logo/Logo';
-import magic from '../../lib/magic';
+import magicClient from '../../lib/magic/client';
 import styles from './Navigation.module.css';
 
 function Navigation() {
@@ -15,7 +15,7 @@ function Navigation() {
 	useEffect(() => {
 		(async () => {
 			try {
-				const { email: eMail } = await magic.user.getMetadata();
+				const { email: eMail } = await magicClient.user.getMetadata();
 
 				if (eMail) {
 					setUserName(eMail);
@@ -40,9 +40,9 @@ function Navigation() {
 
 	const onLogOut = async event => {
 		try {
-			await magic.user.logout();
+			await magicClient.user.logout();
 
-			if (await magic.user.isLoggedIn()) {
+			if (await magicClient.user.isLoggedIn()) {
 				throw new Error('Still Logged In');
 			};
 		} catch (error) {

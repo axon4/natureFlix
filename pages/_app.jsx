@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Spinner from '../components/spinner/Spinner';
-import magic from '../lib/magic';
+import magicClient from '../lib/magic/client';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
 	useEffect(() => {
 		(async () => {
 			try {
-				const loggedIn = await magic.user.isLoggedIn();
+				const loggedIn = await magicClient.user.isLoggedIn();
 
 				if (loggedIn) {
 					router.push('/');
