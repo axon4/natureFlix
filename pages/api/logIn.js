@@ -1,6 +1,7 @@
 import JWT from 'jsonwebtoken';
+import cookie from 'cookie';
 import magicServer from '../../lib/magic/server';
-import { isNewUser } from '../../srv/hasura';
+import { createUser, isNewUser } from '../../srv/hasura';
 
 async function logIn(request, response) {
 	switch (request.method) {
@@ -22,9 +23,22 @@ async function logIn(request, response) {
 					process.env.HASURA_JWT_SECRET
 				);
 
-				const isThisNewUser = await isNewUser(token, metaData.issuer);
+				if (await isNewUser(token, metaData.issuer)) {
+					await createUser(token, metaData);
+				};
 
-				response.status(418).send({ JWTToken, isThisNewUser });
+				const SEVEN_DAYS_IN_SECONDS = 7 * 24 * 60 * 60;
+				const tokenCookie = cookie.serialize('token', token, {
+					path: '/',
+					secure: process.env.NODE_ENV === 'production',
+					maxAge: SEVEN_DAYS_IN_SECONDS,
+					expires: new Date(Date.now() + (SEVEN_DAYS_IN_SECONDS * 1000))
+				});
+
+				response
+					.status(200)
+					.setHeader('Set-Cookie', tokenCookie)
+					.send('200 OK');
 			} catch (error) {
 				response.status(500).send('500 Internal Server Error:', error);
 			};

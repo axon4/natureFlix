@@ -44,3 +44,25 @@ export async function isNewUser(token, issuer) {
 		console.error('Error Determining New User Status:', error);
 	};
 };
+
+export async function createUser(token, metaData) {
+	try {
+		const operation = `
+			mutation createUser ($issuer: String!, $publicAddress: String!, $eMail: String!) {
+				insert_users(objects: {issuer: $issuer, publicAddress: $publicAddress, eMail: $eMail}) {
+					returning {
+						ID
+						issuer
+						eMail
+					}
+				}
+			}
+		`;
+
+		const response = await graphQL(token, operation, 'createUser', {...metaData});
+		
+		return response;
+	} catch (error) {
+		console.error('Error Creating New User:', error);
+	};
+};
