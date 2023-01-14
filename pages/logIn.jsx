@@ -38,11 +38,24 @@ function logIn() {
 				const DIDToken = await magicLogIn(eMail);
 
 				if (DIDToken) {
-					router.push('/');
+					const response = await fetch('/api/logIn', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${DIDToken}`
+						}
+					});
+
+					if (response.status === 200) {
+						router.push('/');
+					} else {
+						throw new Error('LogIn API Error');
+					};
 				};
 
 			} catch (error) {
-				console.error('Error Logging In', error);
+				setLoading(false);
+				console.error('Error Logging In:', error);
 			};
 		};
 	};

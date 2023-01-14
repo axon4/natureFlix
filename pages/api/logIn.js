@@ -13,22 +13,22 @@ async function logIn(request, response) {
 					{
 						iat: Math.floor(Date.now() / 1000),
 						exp: Math.floor((Date.now() / 1000) + (7 * 24 * 60 * 60)),
-						"https://hasura.io/jwt/claims": {
-						  "x-hasura-allowed-roles": ["user", "admin"],
-						  "x-hasura-default-role": "user",
-						  "x-hasura-user-id": `${metadata.issuer}`,
+						'https://hasura.io/jwt/claims': {
+						  'X-HASURA-ALLOWED-ROLES': ['user', 'admin'],
+						  'X-HASURA-DEFAULT-ROLE': 'user',
+						  'X-HASURA-USER-ID': `${metaData.issuer}`,
 						},
 						...metaData
 					},
 					process.env.HASURA_JWT_SECRET
 				);
 
-				if (await isNewUser(token, metaData.issuer)) {
-					await createUser(token, metaData);
+				if (await isNewUser(JWTToken, metaData.issuer)) {
+					await createUser(JWTToken, metaData);
 				};
 
 				const SEVEN_DAYS_IN_SECONDS = 7 * 24 * 60 * 60;
-				const tokenCookie = cookie.serialize('token', token, {
+				const tokenCookie = cookie.serialize('token', JWTToken, {
 					path: '/',
 					secure: process.env.NODE_ENV === 'production',
 					maxAge: SEVEN_DAYS_IN_SECONDS,

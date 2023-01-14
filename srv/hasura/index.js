@@ -1,4 +1,4 @@
-export async function graphQL(token, operation, operationName = '', variables = {}) {
+export async function graphQL(token, operation, operationName, variables) {
 	try {
 		const response = await fetch(process.env.HASURA_GRAPHQL_URL, {
 			method: 'POST',
@@ -16,7 +16,7 @@ export async function graphQL(token, operation, operationName = '', variables = 
 		const data = await response.json();
 
 		if (data.errors) {
-			throw new error(errors);
+			throw new Error(errors);
 		};
 	
 		return data;
@@ -45,10 +45,10 @@ export async function isNewUser(token, issuer) {
 	};
 };
 
-export async function createUser(token, metaData) {
+export async function createUser(token, { issuer, publicAddress, email: eMail }) {
 	try {
 		const operation = `
-			mutation createUser ($issuer: String!, $publicAddress: String!, $eMail: String!) {
+			mutation createUser($issuer: String!, $publicAddress: String!, $eMail: String!) {
 				insert_users(objects: {issuer: $issuer, publicAddress: $publicAddress, eMail: $eMail}) {
 					returning {
 						ID
@@ -59,7 +59,11 @@ export async function createUser(token, metaData) {
 			}
 		`;
 
-		const response = await graphQL(token, operation, 'createUser', {...metaData});
+		const response = await graphQL(token, operation, 'createUser', {
+			issuer,
+			publicAddress,
+			eMail
+		});
 		
 		return response;
 	} catch (error) {
