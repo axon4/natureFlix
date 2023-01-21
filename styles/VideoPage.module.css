@@ -37,6 +37,14 @@
 	composes: boxShadow;
 }
 
+.ratingsContainer {
+	display: flex;
+	margin-bottom: 0.75rem;
+	position: absolute;
+	top: 35%;
+	padding-left: 1rem;
+}
+
 .modalBody {
 	padding: 0 3rem;
 }

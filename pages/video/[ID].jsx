@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import classNames from 'classnames';
 import Navigation from '../../components/navigation/Navigation';
+import Like from '../../components/rating/Like';
+import DisLike from '../../components/rating/DisLike';
 import { getVideo } from '../../srv/youTube';
 import styles from '../../styles/VideoPage.module.css';
 
@@ -30,6 +33,18 @@ export async function getStaticPaths() {
 
 function VideoPage({ title, description, publishTime, channel, views }) {
 	const router = useRouter();
+	const [ like, setLike ] = useState(false);
+	const [ disLike, setDisLike ] = useState(false);
+
+	const onLikeClick = () => {
+		setDisLike(false);
+		setLike(true);
+	};
+
+	const onDisLikeClick = () => {
+		setLike(false);
+		setDisLike(true);
+	};
 
 	return (
 		<main>
@@ -48,6 +63,10 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 					width='100%'
 					height='360'
 				/>
+				<div className={styles.ratingsContainer}>
+					<Like filled={like} onClick={onLikeClick} />
+					<DisLike filled={disLike} onClick={onDisLikeClick} />
+				</div>
 				<section className={classNames(styles.modalBody, styles.modalBodyContent)}>
 					<div className={styles.column1}>
 						<h5 className={styles.publishTime}>{publishTime}</h5>
