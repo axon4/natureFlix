@@ -1,5 +1,5 @@
 import JWT from 'jsonwebtoken';
-import { doStatisticsExistForUser } from '../../srv/hasura';
+import { doStatisticsExistForUser, updateStatistics } from '../../srv/hasura';
 
 async function statistics(request, response) {
 	switch (request.method) {
@@ -11,10 +11,20 @@ async function statistics(request, response) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
 					const deCodedToken = JWT.verify(token, process.env.HASURA_JWT_SECRET);
+					const { videoID } = request.body;
 
-					console.log(await doStatisticsExistForUser(token, request.body.videoID, deCodedToken.issuer));
+					if (await doStatisticsExistForUser(token, videoID, deCodedToken.issuer)) {
+						const updateResponse = await updateStatistics(token, {
+							videoID,
+							userID: 'issuer',
+							watched: false,
+							rating: 2
+						});
 
-					response.status(200).send('200 OK');
+						console.log({ updateResponse });
+
+						response.status(200).send('200 OK');
+					};
 				};
 			} catch (error) {
 				response.status(500).send(`500 Internal Server Error: ${error}`);

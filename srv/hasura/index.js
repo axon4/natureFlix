@@ -95,3 +95,26 @@ export async function doStatisticsExistForUser(token, videoID, userID) {
 		console.error('Error Getting Statistics Existence For User:', error);
 	};
 };
+
+export async function updateStatistics(token, statistics) {
+	const operation = `
+		mutation updateStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
+			update_statistics(
+				where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }},
+				_set: {watched: $watched, rating: $rating}
+			) {
+				returning {
+					ID
+					userID
+					videoID
+					watched
+					rating
+				}
+			}
+		}
+	`;
+
+	const response = await graphQL(token, operation, 'updateStatistics', {...statistics});
+
+	return response;
+};
