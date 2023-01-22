@@ -30,8 +30,6 @@ export async function isNewUser(token, issuer) {
 		const operation = `
 			query isNewUser($issuer: String!) {
 				users(where: {issuer: {_eq: $issuer}}) {
-					ID
-					eMail
 					issuer
 				}
 			}
@@ -49,12 +47,8 @@ export async function createUser(token, { issuer, publicAddress, email: eMail })
 	try {
 		const operation = `
 			mutation createUser($issuer: String!, $publicAddress: String!, $eMail: String!) {
-				insert_users(objects: {issuer: $issuer, publicAddress: $publicAddress, eMail: $eMail}) {
-					returning {
-						ID
-						issuer
-						eMail
-					}
+				insert_users_one(object: {issuer: $issuer, publicAddress: $publicAddress, eMail: $eMail}) {
+					publicAddress
 				}
 			}
 		`;
@@ -76,10 +70,6 @@ export async function getStatistics(token, videoID, userID) {
 		const operation = `
 			query getStatistics($userID: String!, $videoID: String!) {
 				statistics(where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }}) {
-					ID
-					userID
-					videoID
-					watched
 					rating
 				}
 			}
@@ -100,11 +90,7 @@ export async function insertStatistics(token, statistics) {
 	const operation = `
 		mutation insertStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
 			insert_statistics_one(object: {videoID: $videoID, userID: $userID, watched: $watched, rating: $rating}) {
-				ID
-				userID
 				videoID
-				watched
-				rating
 			}
 		}
 	`;
@@ -121,13 +107,7 @@ export async function updateStatistics(token, statistics) {
 				where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }},
 				_set: {watched: $watched, rating: $rating}
 			) {
-				returning {
-					ID
-					userID
-					videoID
-					watched
-					rating
-				}
+				affected_rows
 			}
 		}
 	`;
@@ -135,4 +115,18 @@ export async function updateStatistics(token, statistics) {
 	const response = await graphQL(token, operation, 'updateStatistics', {...statistics});
 
 	return response;
+};
+
+export async function getWatchedVideos(token, userID) {
+	const operation = `
+		query getWatchedVideos($userID: String!) {
+			statistics(where: {watched: {_eq: true}, userID: {_eq: $userID}}) {
+				videoID
+			}
+		}
+	`;
+
+	const response = await graphQL(token, operation, 'getWatchedVideos', { userID });
+
+	return response?.data?.statistics;
 };

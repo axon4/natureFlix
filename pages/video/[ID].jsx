@@ -63,7 +63,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 			},
 			body: JSON.stringify({
 				videoID,
-				watched: true,
+				watched: true, // TO-DO: find a way to get click event from iFrame instead of hard-coding
 				rating
 			})
 		});
