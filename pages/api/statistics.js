@@ -1,4 +1,4 @@
-import JWT from 'jsonwebtoken';
+import { getAuthenticatedUser } from '../../lib/JWT';
 import { getStatistics, insertStatistics, updateStatistics } from '../../srv/hasura';
 
 
@@ -11,11 +11,11 @@ async function statistics(request, response) {
 				if (!token) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
-					const deCodedToken = JWT.verify(token, process.env.HASURA_JWT_SECRET);
+					const userID = getAuthenticatedUser(token);
 					const { videoID } = request.query;
 
 					if (videoID) {
-						const statistics = await getStatistics(token, videoID, deCodedToken.issuer);
+						const statistics = await getStatistics(token, videoID, userID);
 
 						if (statistics.length > 0) {
 							response.status(200).json(statistics);
@@ -38,16 +38,16 @@ async function statistics(request, response) {
 				if (!token) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
-					const deCodedToken = JWT.verify(token, process.env.HASURA_JWT_SECRET);
+					const userID = getAuthenticatedUser(token);
 					const { videoID, ...otherStatistics } = request.body;
 
 					if (videoID) {
-						const statistics = await getStatistics(token, videoID, deCodedToken.issuer);
+						const statistics = await getStatistics(token, videoID, userID);
 
 						if (statistics.length > 0) {
 							await updateStatistics(token, {
 								videoID,
-								userID: 'issuer',
+								userID,
 								...otherStatistics
 							});
 
@@ -55,7 +55,7 @@ async function statistics(request, response) {
 						} else {
 							await insertStatistics(token, {
 								videoID,
-								userID: 'issuer',
+								userID,
 								...otherStatistics
 							});
 
