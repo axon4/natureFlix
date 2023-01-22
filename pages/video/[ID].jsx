@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import classNames from 'classnames';
@@ -37,6 +37,23 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 	const [ disLike, setDisLike ] = useState(false);
 
 	const videoID = router.query.ID;
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const response = await fetch(`/api/statistics?videoID=${videoID}`, {method: 'GET'});
+
+				if (response.status === 200) {
+					const data = await response.json();
+					const { rating } = data[0];
+
+					rating === 1 ? setLike(true) : setDisLike(true);
+				};
+			} catch (error) {
+				console.error('Error Getting Statistics:', error);
+			};
+		})();
+	}, [videoID]);
 
 	const updateStatistics = async rating => {
 		await fetch('/api/statistics', {

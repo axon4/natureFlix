@@ -1,12 +1,40 @@
 import JWT from 'jsonwebtoken';
-import { doStatisticsExistForUser, insertStatistics, updateStatistics } from '../../srv/hasura';
+import { getStatistics, insertStatistics, updateStatistics } from '../../srv/hasura';
+
 
 async function statistics(request, response) {
+	const { token } = request.cookies;
+
 	switch (request.method) {
+		case 'GET': {
+			try {
+				if (!token) {
+					response.status(401).send('401 UnAuthorised');
+				} else {
+					const deCodedToken = JWT.verify(token, process.env.HASURA_JWT_SECRET);
+					const { videoID } = request.query;
+
+					if (videoID) {
+						const statistics = await getStatistics(token, videoID, deCodedToken.issuer);
+
+						if (statistics.length > 0) {
+							response.status(200).json(statistics);
+						} else {
+							response.status(404).send('404 Not Found: Statistics Not Found');
+						};
+					} else {
+						response.status(422).send('422 UnProcessable Entity: Missing \'videoID\' Query');
+					};
+				};
+			} catch (error) {
+				response.status(500).send(`500 Internal Server Error: ${error}`);
+			};
+		};
+
+			break;
+		
 		case 'POST': {
 			try {
-				const { token } = request.cookies;
-
 				if (!token) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
@@ -14,8 +42,10 @@ async function statistics(request, response) {
 					const { videoID, ...otherStatistics } = request.body;
 
 					if (videoID) {
-						if (await doStatisticsExistForUser(token, videoID, deCodedToken.issuer)) {
-							const updateResponse = await updateStatistics(token, {
+						const statistics = await getStatistics(token, videoID, deCodedToken.issuer);
+
+						if (statistics.length > 0) {
+							await updateStatistics(token, {
 								videoID,
 								userID: 'issuer',
 								...otherStatistics
@@ -23,7 +53,7 @@ async function statistics(request, response) {
 
 							response.status(200).send('200 OK');
 						} else {
-							const updateResponse = await insertStatistics(token, {
+							await insertStatistics(token, {
 								videoID,
 								userID: 'issuer',
 								...otherStatistics
@@ -32,7 +62,7 @@ async function statistics(request, response) {
 							response.status(201).send('201 Created');
 						};
 					} else {
-						response.status(422).send('422 UnProcessable Entity: Missing \'videoID\' Argument');
+						response.status(422).send('422 UnProcessable Entity: Missing \'videoID\' Body Argument');
 					};
 				};
 			} catch (error) {

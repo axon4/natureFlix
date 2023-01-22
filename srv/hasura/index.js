@@ -71,10 +71,10 @@ export async function createUser(token, { issuer, publicAddress, email: eMail })
 	};
 };
 
-export async function doStatisticsExistForUser(token, videoID, userID) {
+export async function getStatistics(token, videoID, userID) {
 	try {
 		const operation = `
-			query doStatisticsExistForUser($userID: String!, $videoID: String!) {
+			query getStatistics($userID: String!, $videoID: String!) {
 				statistics(where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }}) {
 					ID
 					userID
@@ -85,14 +85,14 @@ export async function doStatisticsExistForUser(token, videoID, userID) {
 			}
 	  `;
 	  
-		const response = await graphQL(token, operation, 'doStatisticsExistForUser', {
+		const response = await graphQL(token, operation, 'getStatistics', {
 			videoID,
 			userID
 		});
 	  
-		return response?.data?.statistics?.length !== 0;
+		return response?.data?.statistics;
 	} catch (error) {
-		console.error('Error Getting Statistics Existence For User:', error);
+		console.error('Error Getting Statistics For User:', error);
 	};
 };
 
