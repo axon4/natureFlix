@@ -36,14 +36,32 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 	const [ like, setLike ] = useState(false);
 	const [ disLike, setDisLike ] = useState(false);
 
-	const onLikeClick = () => {
-		setDisLike(false);
-		setLike(true);
+	const videoID = router.query.ID;
+
+	const updateStatistics = async rating => {
+		await fetch('/api/statistics', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				videoID,
+				watched: true,
+				rating
+			})
+		});
 	};
 
-	const onDisLikeClick = () => {
+	const onLikeClick = async () => {
+		setDisLike(false);
+		setLike(true);
+		updateStatistics(1);
+	};
+
+	const onDisLikeClick = async () => {
 		setLike(false);
 		setDisLike(true);
+		updateStatistics(0);
 	};
 
 	return (
@@ -57,7 +75,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 			>
 				<iframe
 					className={styles.iFrame}
-					src={`https://www.youtube.com/embed/${router.query.ID}?autoplay=0&controls=0&rel=0&modestbranding=1`}
+					src={`https://www.youtube.com/embed/${videoID}?autoplay=0&controls=1&rel=0&modestbranding=1`}
 					type='text/html'
 					frameBorder='0'
 					width='100%'
