@@ -18,7 +18,9 @@ async function logIn(request, response) {
 						  'X-HASURA-DEFAULT-ROLE': 'user',
 						  'X-HASURA-USER-ID': `${metaData.issuer}`,
 						},
-						...metaData
+						issuer: metaData.issuer,
+						publicAddress: metaData.publicAddress,
+						eMail: metaData.email
 					},
 					process.env.HASURA_JWT_SECRET
 				);
@@ -40,7 +42,7 @@ async function logIn(request, response) {
 					.setHeader('Set-Cookie', tokenCookie)
 					.send('200 OK');
 			} catch (error) {
-				response.status(500).send('500 Internal Server Error:', error);
+				response.status(500).send(`500 Internal Server Error: ${error.message}`);
 			};
 		};
 
