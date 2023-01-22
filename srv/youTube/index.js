@@ -1,5 +1,6 @@
-import { parseVideos, parseVideo } from '../../lib/youTube';
+import { parseVideos, parseVideo, getThumbNailURL } from '../../lib/youTube';
 import mockVideos from '../../data/videos.json';
+import { getWatchedVideos } from '../hasura';
 
 export async function getVideos(query, channelID = null) {
 	try {
@@ -52,4 +53,15 @@ export async function getVideo(ID) {
 
 		return {};
 	};
+};
+
+export async function getWatchItAgainVideos(token, userID) {
+	const videos = await getWatchedVideos(token, userID);
+
+	const parsedVideos = videos?.map(({ videoID }) => ({
+		ID: videoID,
+		imageURL: getThumbNailURL(videoID)
+	}));
+
+	return parsedVideos;
 };

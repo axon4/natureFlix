@@ -69,7 +69,7 @@ export async function getStatistics(token, videoID, userID) {
 	try {
 		const operation = `
 			query getStatistics($userID: String!, $videoID: String!) {
-				statistics(where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }}) {
+				statistics(where: {userID: {_eq: $userID}, videoID: {_eq: $videoID}}) {
 					rating
 				}
 			}
@@ -104,7 +104,7 @@ export async function updateStatistics(token, statistics) {
 	const operation = `
 		mutation updateStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
 			update_statistics(
-				where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }},
+				where: {userID: {_eq: $userID}, videoID: {_eq: $videoID}},
 				_set: {watched: $watched, rating: $rating}
 			) {
 				affected_rows
