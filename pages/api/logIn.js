@@ -48,6 +48,8 @@ async function logIn(request, response) {
 
 		default:
 			response.status(422).send('422 UnProcessable Entity: UnHandled \'logIn\' Method');
+
+			break;
 	};
 };
 
