@@ -1,4 +1,5 @@
 import JWT from 'jsonwebtoken';
+import { doStatisticsExistForUser } from '../../srv/hasura';
 
 async function statistics(request, response) {
 	switch (request.method) {
@@ -10,6 +11,8 @@ async function statistics(request, response) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
 					const deCodedToken = JWT.verify(token, process.env.HASURA_JWT_SECRET);
+
+					console.log(await doStatisticsExistForUser(token, request.body.videoID, deCodedToken.issuer));
 
 					response.status(200).send('200 OK');
 				};

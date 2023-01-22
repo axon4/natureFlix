@@ -70,3 +70,28 @@ export async function createUser(token, { issuer, publicAddress, email: eMail })
 		console.error('Error Creating New User:', error);
 	};
 };
+
+export async function doStatisticsExistForUser(token, videoID, userID) {
+	try {
+		const operation = `
+			query doStatisticsExistForUser($userID: String!, $videoID: String!) {
+				statistics(where: {userID: {_eq: $userID}, videoID: {_eq: $videoID }}) {
+					ID
+					userID
+					videoID
+					watched
+					rating
+				}
+			}
+	  `;
+	  
+		const response = await graphQL(token, operation, 'doStatisticsExistForUser', {
+			videoID,
+			userID
+		});
+	  
+		return response?.data?.statistics?.length !== 0;
+	} catch (error) {
+		console.error('Error Getting Statistics Existence For User:', error);
+	};
+};
