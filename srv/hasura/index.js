@@ -96,6 +96,24 @@ export async function doStatisticsExistForUser(token, videoID, userID) {
 	};
 };
 
+export async function insertStatistics(token, statistics) {
+	const operation = `
+		mutation insertStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
+			insert_statistics_one(object: {videoID: $videoID, userID: $userID, watched: $watched, rating: $rating}) {
+				ID
+				userID
+				videoID
+				watched
+				rating
+			}
+		}
+	`;
+
+	const response = await graphQL(token, operation, 'insertStatistics', {...statistics});
+
+	return response;
+};
+
 export async function updateStatistics(token, statistics) {
 	const operation = `
 		mutation updateStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
