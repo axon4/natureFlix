@@ -4,7 +4,7 @@ import Spinner from '../components/spinner/Spinner';
 import magicClient from '../lib/magic/client';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
 	const [ loading, setLoading ] = useState(true);
 	const router = useRouter();
 
@@ -40,4 +40,4 @@ function MyApp({ Component, pageProps }) {
 	return loading ? <Spinner /> : <Component {...pageProps} />
 };
 
-export default MyApp;
+export default App;
