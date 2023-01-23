@@ -9,6 +9,7 @@ import styles from './Navigation.module.css';
 
 function Navigation() {
 	const [ userName, setUserName ] = useState('');
+	const [ DIDToken, setDIDToken ] = useState('');
 	const [ showDropDown, setShowDropDown ] = useState(false);
 	const router = useRouter();
 
@@ -16,12 +17,17 @@ function Navigation() {
 		(async () => {
 			try {
 				const { email: eMail } = await magicClient.user.getMetadata();
+				const token = await magicClient.user.getIdToken();
 
 				if (eMail) {
 					setUserName(eMail);
 				};
+				
+				if (token) {
+					setDIDToken(token);
+				};
 			} catch (error) {
-				console.error('Error Getting EMail', error);
+				console.error('Error Getting EMail or DID Token', error);
 			};
 		})();
 	}, []);
@@ -40,13 +46,19 @@ function Navigation() {
 
 	const onLogOut = async () => {
 		try {
-			await magicClient.user.logout();
+			await fetch('/api/logOut', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${DIDToken}`
+				}
+			});
 
 			if (await magicClient.user.isLoggedIn()) {
 				throw new Error('Still Logged In');
 			};
 		} catch (error) {
-			console.error('Error Logging Out', error);
+			console.error('Error Logging Out (Client)', error);
 		};
 	};
 
