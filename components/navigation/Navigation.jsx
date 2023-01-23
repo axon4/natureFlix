@@ -32,13 +32,13 @@ function Navigation() {
 		router.push('/');
 	};
 
-	const onListClick = event => {
+	const onRatingsClick = event => {
 		event.preventDefault();
 		
-		router.push('/browse/list');
+		router.push('/ratings');
 	};
 
-	const onLogOut = async event => {
+	const onLogOut = async () => {
 		try {
 			await magicClient.user.logout();
 
@@ -55,7 +55,7 @@ function Navigation() {
 			<Logo />
 			<ul className={styles.items}>
 				<li className={styles.item1} onClick={onHomeClick}>Home</li>
-				<li className={styles.item2} onClick={onListClick}>List</li>
+				<li className={styles.item2} onClick={onRatingsClick}>Ratings</li>
 			</ul>
 			<div className={styles.dropDownContainer}>
 				<div>
