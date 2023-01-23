@@ -40,8 +40,8 @@ function Ratings({ likedVideos, disLikedVideos }) {
 					<Navigation />
 				</header>
 				<section className={styles.section}>
-					<CardList title='Likes' size='small' videos={likedVideos} />
-					<CardList title='DisLikes' size='small' videos={disLikedVideos} />
+					<CardList title='Likes' size='small' videos={likedVideos} wrap />
+					<CardList title='DisLikes' size='small' videos={disLikedVideos} wrap />
 				</section>
 			</main>
 		</>
