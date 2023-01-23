@@ -38,7 +38,7 @@ function Home({ natureVideos, watchedVideos, cookingVideos, animalVideos, oceanV
 			</Head>
 			<main className={styles.container}>
 				<Navigation />
-				<Banner title='Title' subTitle='SubTitle' imageURL='/toucan.jpg' videoID='J01qyM3Y9VQ' />
+				<Banner title='Toucan' subTitle='Brazilian, Channel-Billed' imageURL='/toucan.jpg' videoID='xW0cIxVMQJs' />
 				<CardList title='Nature' size='large' videos={natureVideos} />
 				<CardList title='Watch Again' size='small' videos={watchedVideos} />
 				<CardList title='Cooking' size='small' videos={cookingVideos} />

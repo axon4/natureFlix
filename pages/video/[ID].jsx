@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
 };
 
 export async function getStaticPaths() {
-	const bannerVideoIDs = ['J01qyM3Y9VQ'];
+	const bannerVideoIDs = ['xW0cIxVMQJs'];
 	const paths = bannerVideoIDs.map(ID => ({
 		params: { ID }
 	}));
