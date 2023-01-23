@@ -7,7 +7,7 @@ import styles from '../styles/Ratings.module.css';
 
 export async function getServerSideProps({ req: request }) {
 	const { token } = request.cookies;
-	const userID = getAuthenticatedUser(token);
+	const userID = await getAuthenticatedUser(token);
 
 	if (!userID) {
 		return {

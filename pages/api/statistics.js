@@ -11,7 +11,7 @@ async function statistics(request, response) {
 				if (!token) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
-					const userID = getAuthenticatedUser(token);
+					const userID = await getAuthenticatedUser(token);
 					const { videoID } = request.query;
 
 					if (videoID) {
@@ -38,7 +38,7 @@ async function statistics(request, response) {
 				if (!token) {
 					response.status(401).send('401 UnAuthorised');
 				} else {
-					const userID = getAuthenticatedUser(token);
+					const userID = await getAuthenticatedUser(token);
 					const { videoID, ...otherStatistics } = request.body;
 
 					if (videoID) {
