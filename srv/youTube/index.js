@@ -1,9 +1,13 @@
 import { parseVideos, parseVideo, getThumbNailURL } from '../../lib/youTube';
-import mockVideos from '../../data/videos.json';
 import { getDisLikedVideos, getLikedVideos, getWatchedVideos } from '../hasura';
+import mockVideos from '../../data/videos.json';
 
 export async function getVideos(query, channelID = null) {
 	try {
+		if (process.env.MOCK === 'true') {
+			return parseVideos(mockVideos);
+		};
+
 		const queryArguments = new URLSearchParams({
 			key: process.env.YOUTUBE_DATA_API_KEY,
 			q: query + 'no music',
@@ -14,19 +18,17 @@ export async function getVideos(query, channelID = null) {
 			maxResults: 27
 		});
 		const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?${queryArguments}`);
-		const data = process.env.MOCK ? mockVideos : await response.json();
+		const data = await response.json();
 
 		if (data?.error) {
 			throw new Error(data.error);
 		};
 
-		const videos = parseVideos(data);
-
-		return videos;
+		return parseVideos(data);
 	} catch (error) {
 		console.error('Error Getting Videos:', error);
 
-		return [];
+		return parseVideos(mockVideos);
 	};
 };
 
