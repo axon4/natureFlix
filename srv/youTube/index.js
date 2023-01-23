@@ -1,6 +1,6 @@
 import { parseVideos, parseVideo, getThumbNailURL } from '../../lib/youTube';
 import mockVideos from '../../data/videos.json';
-import { getWatchedVideos } from '../hasura';
+import { getDisLikedVideos, getLikedVideos, getWatchedVideos } from '../hasura';
 
 export async function getVideos(query, channelID = null) {
 	try {
@@ -57,6 +57,28 @@ export async function getVideo(ID) {
 
 export async function getWatchItAgainVideos(token, userID) {
 	const videos = await getWatchedVideos(token, userID);
+
+	const parsedVideos = videos?.map(({ videoID }) => ({
+		ID: videoID,
+		imageURL: getThumbNailURL(videoID)
+	}));
+
+	return parsedVideos;
+};
+
+export async function getVideosThatAreLiked(token, userID) {
+	const videos = await getLikedVideos(token, userID);
+
+	const parsedVideos = videos?.map(({ videoID }) => ({
+		ID: videoID,
+		imageURL: getThumbNailURL(videoID)
+	}));
+
+	return parsedVideos;
+};
+
+export async function getVideosThatAreDisLiked(token, userID) {
+	const videos = await getDisLikedVideos(token, userID);
 
 	const parsedVideos = videos?.map(({ videoID }) => ({
 		ID: videoID,

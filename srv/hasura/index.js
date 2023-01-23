@@ -130,3 +130,31 @@ export async function getWatchedVideos(token, userID) {
 
 	return response?.data?.statistics;
 };
+
+export async function getLikedVideos(token, userID) {
+	const operation = `
+		query getLikedVideos($userID: String!) {
+			statistics(where: {rating: {_eq: 1}, userID: {_eq: $userID}}) {
+				videoID
+			}
+		}
+	`;
+
+	const response = await graphQL(token, operation, 'getLikedVideos', { userID });
+
+	return response?.data?.statistics;
+};
+
+export async function getDisLikedVideos(token, userID) {
+	const operation = `
+		query getDisLikedVideos($userID: String!) {
+			statistics(where: {rating: {_eq: 0}, userID: {_eq: $userID}}) {
+				videoID
+			}
+		}
+	`;
+
+	const response = await graphQL(token, operation, 'getDisLikedVideos', { userID });
+
+	return response?.data?.statistics;
+};
