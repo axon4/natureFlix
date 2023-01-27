@@ -47,6 +47,7 @@ function logIn() {
 					});
 
 					if (response.status === 200) {
+						router.reload();
 						router.push('/');
 					} else {
 						throw new Error('LogIn API Error');
