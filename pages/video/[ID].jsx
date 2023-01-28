@@ -109,7 +109,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 					</div>
 					<section className={classNames(styles.modalBody, styles.modalBodyContent)}>
 						<div className={styles.column1}>
-							<h5 className={styles.publishTime}>{publishTime}</h5>
+							<h5 className={styles.publishTime}>{new Date(publishTime).toLocaleString('en-GB')}</h5>
 							<hgroup>
 								<h1 className={styles.title}>{title}</h1>
 								<p className={styles.description}>{description}</p>
