@@ -3,7 +3,7 @@ import Navigation from '../components/navigation/Navigation';
 import Banner from '../components/banner/Banner';
 import CardList from '../components/card/CardList';
 import { getAuthenticatedUser } from '../lib/JWT';
-import { getVideos, getWatchItAgainVideos } from '../srv/youTube';
+import { getPlayListVideos, getVideos, getWatchItAgainVideos } from '../srv/youTube';
 import styles from '../styles/Home.module.css';
 
 export async function getServerSideProps({ req: request }) {
@@ -19,11 +19,11 @@ export async function getServerSideProps({ req: request }) {
 		};
 	};
 
-	const natureVideos = await getVideos('nature');
+	const natureVideos = await getVideos('nature', null, 'UCCkmgsl8W18oR6c_W7UZ1lQ');
 	const watchedVideos = await getWatchItAgainVideos(token, userID);
-	const cookingVideos = await getVideos('cooking', 'UCj4KP216972cPp2w_BAHy8g');
-	const animalVideos = await getVideos('animal');
-	const oceanVideos = await getVideos('ocean');
+	const cookingVideos = await getVideos('cooking', null, 'UCj4KP216972cPp2w_BAHy8g');
+	const animalVideos = await getPlayListVideos('PLbWPytS1GWJI_pWDx9EqIR3tywL-Dm2gc');
+	const oceanVideos = await getVideos('aquarium', null, 'UCqZWyp6f8iU3GXYcahCAq_g');
 
 	return {
 		props: { natureVideos, watchedVideos, cookingVideos, animalVideos, oceanVideos }

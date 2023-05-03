@@ -1,8 +1,8 @@
-import { parseVideos, parseVideo, getThumbNailURL } from '../../lib/youTube';
+import { parseVideos, parseVideo, getThumbNailURL, parsePlayListVideos } from '../../lib/youTube';
 import { getDisLikedVideos, getLikedVideos, getWatchedVideos } from '../hasura';
 import mockVideos from '../../data/videos.json';
 
-export async function getVideos(query, channelID = null) {
+export async function getVideos(query, relatedVideo = null, channelID = null) {
 	try {
 		if (process.env.MOCK === 'true') {
 			return parseVideos(mockVideos);
@@ -11,7 +11,8 @@ export async function getVideos(query, channelID = null) {
 		const queryArguments = new URLSearchParams({
 			key: process.env.YOUTUBE_DATA_API_KEY,
 			q: query + 'no music',
-			...(channelID && { channelId: channelID}),
+			...(relatedVideo && {relatedToVideoID: relatedVideo}),
+			...(channelID && {channelId: channelID}),
 			type: 'video',
 			part: 'snippet',
 			safeSearch: 'strict',
@@ -56,6 +57,33 @@ export async function getVideo(ID) {
 		return {};
 	};
 };
+export async function getPlayListVideos(ID) {
+	try {
+		if (process.env.MOCK === 'true') {
+			return parseVideos(mockVideos);
+		};
+
+		const queryArguments = new URLSearchParams({
+			key: process.env.YOUTUBE_DATA_API_KEY,
+			playlistId: ID,
+			part: 'snippet',
+			maxResults: 27
+		});
+		const response = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?${queryArguments}`);
+		const data = await response.json();
+
+		if (data?.error) {
+			throw new Error(data.error);
+		};
+
+		return parsePlayListVideos(data);
+	} catch (error) {
+		console.error('Error Getting Videos:', error);
+
+		return parseVideos(mockVideos);
+	};
+};
+
 
 export async function getWatchItAgainVideos(token, userID) {
 	const videos = await getWatchedVideos(token, userID);
