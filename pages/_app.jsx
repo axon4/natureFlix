@@ -4,7 +4,7 @@ import Spinner from '../components/spinner/Spinner';
 import magicClient from '../lib/magic/client';
 import '../styles/globals.css';
 
-function App({ Component, pageProps }) {
+function Application({ Component, pageProps }) {
 	const [ loading, setLoading ] = useState(true);
 	const router = useRouter();
 
@@ -20,24 +20,24 @@ function App({ Component, pageProps }) {
 				};
 			} catch (error) {
 				setLoading(false);
-				console.error('Error Detecting LogIn State', error);
+				console.error('Error Detecting Log-In--State:', error);
 			};
 		})();
 	}, []);
 
 	useEffect(() => {
-		const unSetLoading = () => {setLoading(false)};
+		const deLoad = () => {setLoading(false)};
 
-		router.events.on('routeChangeComplete', unSetLoading);
-		router.events.on('routeChangeError', unSetLoading);
+		router.events.on('routeChangeComplete', deLoad);
+		router.events.on('routeChangeError', deLoad);
 
 		return () => {
-			router.events.off('routeChangeComplete', unSetLoading);
-			router.events.off('routeChangeError', unSetLoading);
+			router.events.off('routeChangeComplete', deLoad);
+			router.events.off('routeChangeError', deLoad);
 		};
 	}, [router]);
 
 	return loading ? <Spinner /> : <Component {...pageProps} />
 };
 
-export default App;
+export default Application;

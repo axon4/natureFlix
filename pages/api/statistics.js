@@ -1,6 +1,5 @@
 import { getAuthenticatedUser } from '../../lib/JWT';
-import { getStatistics, insertStatistics, updateStatistics } from '../../srv/hasura';
-
+import { getStatistics, insertStatistics, upDateStatistics } from '../../srv/hasura';
 
 async function statistics(request, response) {
 	const { token } = request.cookies;
@@ -32,7 +31,7 @@ async function statistics(request, response) {
 		};
 
 			break;
-		
+
 		case 'POST': {
 			try {
 				if (!token) {
@@ -45,24 +44,16 @@ async function statistics(request, response) {
 						const statistics = await getStatistics(token, videoID, userID);
 
 						if (statistics.length > 0) {
-							await updateStatistics(token, {
-								videoID,
-								userID,
-								...otherStatistics
-							});
+							await upDateStatistics(token, { videoID, userID, ...otherStatistics });
 
 							response.status(200).send('200 OK');
 						} else {
-							await insertStatistics(token, {
-								videoID,
-								userID,
-								...otherStatistics
-							});
+							await insertStatistics(token, { videoID, userID, ...otherStatistics });
 
 							response.status(201).send('201 Created');
 						};
 					} else {
-						response.status(422).send('422 UnProcessable Entity: Missing \'videoID\' Body Argument');
+						response.status(422).send('422 UnProcessable Entity: Missing \'videoID\' Body-Argument');
 					};
 				};
 			} catch (error) {

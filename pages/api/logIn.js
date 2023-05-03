@@ -14,9 +14,9 @@ async function logIn(request, response) {
 						iat: Math.floor(Date.now() / 1000),
 						exp: Math.floor((Date.now() / 1000) + (7 * 24 * 60 * 60)),
 						'https://hasura.io/jwt/claims': {
-						  'X-HASURA-ALLOWED-ROLES': ['user', 'admin'],
-						  'X-HASURA-DEFAULT-ROLE': 'user',
-						  'X-HASURA-USER-ID': `${metaData.issuer}`,
+							'X-HASURA-ALLOWED-ROLES': ['user', 'admin'],
+							'X-HASURA-DEFAULT-ROLE': 'user',
+							'X-HASURA-USER-ID': `${metaData.issuer}`,
 						},
 						issuer: metaData.issuer,
 						publicAddress: metaData.publicAddress,
@@ -37,10 +37,7 @@ async function logIn(request, response) {
 					expires: new Date(Date.now() + (SEVEN_DAYS_IN_SECONDS * 1000))
 				});
 
-				response
-					.status(200)
-					.setHeader('Set-Cookie', tokenCookie)
-					.send('200 OK');
+				response.status(200).setHeader('Set-Cookie', tokenCookie).send('200 OK');
 			} catch (error) {
 				response.status(500).send(`500 Internal Server Error: ${error.message}`);
 			};

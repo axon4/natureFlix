@@ -10,7 +10,7 @@ export async function getVideos(query, relatedVideo = null, channelID = null) {
 
 		const queryArguments = new URLSearchParams({
 			key: process.env.YOUTUBE_DATA_API_KEY,
-			q: query + 'no music',
+			q: query + ' ' + 'no music',
 			...(relatedVideo && {relatedToVideoID: relatedVideo}),
 			...(channelID && {channelId: channelID}),
 			type: 'video',
@@ -40,7 +40,6 @@ export async function getVideo(ID) {
 			id: ID,
 			part: 'snippet,contentDetails,statistics'
 		});
-
 		const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?${queryArguments}`);
 		const data = await response.json();
 
@@ -57,6 +56,7 @@ export async function getVideo(ID) {
 		return {};
 	};
 };
+
 export async function getPlayListVideos(ID) {
 	try {
 		if (process.env.MOCK === 'true') {
@@ -84,10 +84,8 @@ export async function getPlayListVideos(ID) {
 	};
 };
 
-
 export async function getWatchItAgainVideos(token, userID) {
 	const videos = await getWatchedVideos(token, userID);
-
 	const parsedVideos = videos?.map(({ videoID }) => ({
 		ID: videoID,
 		imageURL: getThumbNailURL(videoID)
@@ -98,7 +96,6 @@ export async function getWatchItAgainVideos(token, userID) {
 
 export async function getVideosThatAreLiked(token, userID) {
 	const videos = await getLikedVideos(token, userID);
-
 	const parsedVideos = videos?.map(({ videoID }) => ({
 		ID: videoID,
 		imageURL: getThumbNailURL(videoID)
@@ -109,7 +106,6 @@ export async function getVideosThatAreLiked(token, userID) {
 
 export async function getVideosThatAreDisLiked(token, userID) {
 	const videos = await getDisLikedVideos(token, userID);
-
 	const parsedVideos = videos?.map(({ videoID }) => ({
 		ID: videoID,
 		imageURL: getThumbNailURL(videoID)

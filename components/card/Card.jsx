@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import styles from './Card.module.css';
 import classNames from 'classnames';
+import styles from './Card.module.css';
 
 function Card({ size = 'medium', imageURL = '/toucan.jpg', endOfList }) {
 	const [ source, setSource ] = useState(imageURL);
@@ -17,7 +17,7 @@ function Card({ size = 'medium', imageURL = '/toucan.jpg', endOfList }) {
 	return (
 		<article className={styles.container}>
 			<motion.div className={classNames(styles.animationWrapper, styles[size])} whileHover={{[scalar]: 1.1}}>
-				<Image className={styles.image} src={source} alt='image' fill onError={onError} />
+				<Image className={styles.image} src={source} alt='thumbNail' fill onError={onError} />
 			</motion.div>
 		</article>
 	);

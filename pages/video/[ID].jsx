@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 	};
 };
 
-function VideoPage({ title, description, publishTime, channel, views }) {
+function Video({ title, description, publishTime, channel, views }) {
 	const router = useRouter();
 	const [ like, setLike ] = useState(false);
 	const [ disLike, setDisLike ] = useState(false);
@@ -51,12 +51,12 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 					rating === 1 ? setLike(true) : setDisLike(true);
 				};
 			} catch (error) {
-				console.error('Error Getting Statistics:', error);
+				console.error('Error Getting Statistics for Video:', error);
 			};
 		})();
 	}, [videoID]);
 
-	const updateStatistics = async rating => {
+	const upDateStatistics = async rating => {
 		await fetch('/api/statistics', {
 			method: 'POST',
 			headers: {
@@ -64,7 +64,7 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 			},
 			body: JSON.stringify({
 				videoID,
-				watched: true, // TO-DO: find a way to get click event from iFrame instead of hard-coding
+				watched: true, // TO-DO: find way to get click-event from iFrame instead of hard-coding
 				rating
 			})
 		});
@@ -73,13 +73,13 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 	const onLikeClick = async () => {
 		setDisLike(false);
 		setLike(true);
-		updateStatistics(1);
+		upDateStatistics(1);
 	};
 
 	const onDisLikeClick = async () => {
 		setLike(false);
 		setDisLike(true);
-		updateStatistics(0);
+		upDateStatistics(0);
 	};
 
 	return (
@@ -89,20 +89,8 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 			</Head>
 			<main>
 				<Navigation />
-				<Modal
-					className={styles.modal}
-					overlayClassName={styles.overlay}
-					isOpen={true}
-					onRequestClose={() => {router.back()}}
-				>
-					<iframe
-						className={styles.iFrame}
-						src={`https://www.youtube.com/embed/${videoID}?autoplay=0&controls=1&rel=0&modestbranding=1`}
-						type='text/html'
-						frameBorder='0'
-						width='100%'
-						height='360'
-					/>
+				<Modal className={styles.modal} overlayClassName={styles.overLay} isOpen={true} onRequestClose={() => {router.back()}}>
+					<iframe className={styles.iFrame} src={`https://www.youtube.com/embed/${videoID}?autoplay=0&controls=1&rel=0&modestbranding=1`} type='text/html' frameBorder='0' width='100%' height='360' />
 					<div className={styles.ratingsContainer}>
 						<Like filled={like} onClick={onLikeClick} />
 						<DisLike filled={disLike} onClick={onDisLikeClick} />
@@ -132,4 +120,4 @@ function VideoPage({ title, description, publishTime, channel, views }) {
 	);
 };
 
-export default VideoPage;
+export default Video;

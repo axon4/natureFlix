@@ -6,12 +6,12 @@ async function logOut(request, response) {
 		case 'POST': {
 			try {
 				const token = request.headers.authorization?.substr(7);
-				
+
 				if (token) {
 					try {
 						await magicServer.users.logoutByToken(token);
 					} catch (error) {
-						console.error('Error Logging Out (Server)', error);
+						console.error('Error Logging-Out (Server):', error);
 					};
 				};
 
@@ -32,10 +32,10 @@ async function logOut(request, response) {
 			};
 		};
 		default:
-			response.status(422).send('422 UnProcessable Entity: UnHandled \'logIn\' Method');
+			response.status(422).send('422 UnProcessable Entity: UnHandled \'logOut\' Method');
 
 			break;
-	}
+	};
 };
 
 export default logOut;

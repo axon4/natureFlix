@@ -6,10 +6,10 @@ class Document2 extends Document {
 			<HTML>
 				<Head>
 					<meta name='title' content='NatureFlix' />
-					<meta name='description' content='Watch Videos to Admire the Beauty of Nature' />
+					<meta name='description' content='NatureFlix' />
 					<link rel='icon' type='image/x-icon' href='/favicon.ico' />
 					<link rel='preconnect' href='https://fonts.googleapis.com' />
-					<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+					<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
 					<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap' />
 				</Head>
 				<body>

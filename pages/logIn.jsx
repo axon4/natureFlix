@@ -5,21 +5,21 @@ import Logo from '../components/logo/Logo';
 import { magicLogIn } from '../srv/magic';
 import styles from '../styles/logIn.module.css';
 
-function logIn() {
+function LogIn() {
 	const [ eMail, setEMail ] = useState('');
 	const [ eMailValidity, setEMailValidity ] = useState(false);
 	const [ loading, setLoading ] = useState(false);
 	const router = useRouter();
 
 	useEffect(() => {
-		const unSetLoading = () => {setLoading(false)};
+		const deLoad = () => {setLoading(false)};
 
-		router.events.on('routeChangeComplete', unSetLoading);
-		router.events.on('routeChangeError', unSetLoading);
+		router.events.on('routeChangeComplete', deLoad);
+		router.events.on('routeChangeError', deLoad);
 
 		return () => {
-			router.events.off('routeChangeComplete', unSetLoading);
-			router.events.off('routeChangeError', unSetLoading);
+			router.events.off('routeChangeComplete', deLoad);
+			router.events.off('routeChangeError', deLoad);
 		};
 	}, [router]);
 
@@ -50,13 +50,13 @@ function logIn() {
 						router.reload();
 						router.push('/');
 					} else {
-						throw new Error('LogIn API Error');
+						throw new Error('LogIn-API--Failure');
 					};
 				};
 
 			} catch (error) {
 				setLoading(false);
-				console.error('Error Logging In:', error);
+				console.error('Error Logging-In:', error);
 			};
 		};
 	};
@@ -64,7 +64,7 @@ function logIn() {
 	return (
 		<>
 			<Head>
-				<title>Log In | NatureFlix</title>
+				<title>Log-In | NatureFlix</title>
 			</Head>
 			<div className={styles.container}>
 				<header>
@@ -74,12 +74,12 @@ function logIn() {
 				</header>
 				<main className={styles.main}>
 					<form className={styles.form}>
-						<h1 className={styles.heading}>Log In</h1>
-						<input className={styles.input} type='email' placeholder='EMail' onChange={onChange} />
-						{!eMailValidity && eMail && <pre className={styles.error}>InValid EMail Address</pre>}
+						<h1 className={styles.heading}>Log-In</h1>
+						<input className={styles.inPut} type='email' placeholder='EMail' onChange={onChange} />
+						{eMail && !eMailValidity && <pre className={styles.error}>InValid EMail-Address</pre>}
 						<button className={styles.button} type='submit' onClick={onClick}>
-							{loading ? 'Logging In...' : 'Log In'}
-						</button> 
+							{loading ? 'Logging-In...' : 'Log-In'}
+						</button>
 					</form>
 				</main>
 			</div>
@@ -87,4 +87,4 @@ function logIn() {
 	);
 };
 
-export default logIn;
+export default LogIn;

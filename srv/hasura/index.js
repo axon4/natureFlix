@@ -21,7 +21,7 @@ export async function graphQL(token, operation, operationName, variables) {
 	
 		return data;
 	} catch (error) {
-		console.error('Error Fetching GraphQL Data:', error);
+		console.error('Error Fetching GraphQL-Data:', error);
 	};
 };
 
@@ -34,12 +34,11 @@ export async function isNewUser(token, issuer) {
 				}
 			}
 		`;
-
 		const response = await graphQL(token, operation, 'isNewUser', { issuer });
 		
 		return response?.data?.users?.length === 0;
 	} catch (error) {
-		console.error('Error Determining New User Status:', error);
+		console.error('Error Determining New-User--Status:', error);
 	};
 };
 
@@ -52,12 +51,7 @@ export async function createUser(token, { issuer, publicAddress, email: eMail })
 				}
 			}
 		`;
-
-		const response = await graphQL(token, operation, 'createUser', {
-			issuer,
-			publicAddress,
-			eMail
-		});
+		const response = await graphQL(token, operation, 'createUser', { issuer, publicAddress, eMail });
 		
 		return response;
 	} catch (error) {
@@ -74,15 +68,11 @@ export async function getStatistics(token, videoID, userID) {
 				}
 			}
 	  `;
-	  
-		const response = await graphQL(token, operation, 'getStatistics', {
-			videoID,
-			userID
-		});
+		const response = await graphQL(token, operation, 'getStatistics', { videoID, userID });
 	  
 		return response?.data?.statistics;
 	} catch (error) {
-		console.error('Error Getting Statistics For User:', error);
+		console.error('Error Getting Statistics for User:', error);
 	};
 };
 
@@ -94,15 +84,14 @@ export async function insertStatistics(token, statistics) {
 			}
 		}
 	`;
-
 	const response = await graphQL(token, operation, 'insertStatistics', {...statistics});
 
 	return response;
 };
 
-export async function updateStatistics(token, statistics) {
+export async function upDateStatistics(token, statistics) {
 	const operation = `
-		mutation updateStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
+		mutation upDateStatistics($videoID: String!, $userID: String!, $watched: Boolean!, $rating: Int!) {
 			update_statistics(
 				where: {userID: {_eq: $userID}, videoID: {_eq: $videoID}},
 				_set: {watched: $watched, rating: $rating}
@@ -111,8 +100,7 @@ export async function updateStatistics(token, statistics) {
 			}
 		}
 	`;
-
-	const response = await graphQL(token, operation, 'updateStatistics', {...statistics});
+	const response = await graphQL(token, operation, 'upDateStatistics', {...statistics});
 
 	return response;
 };
@@ -125,7 +113,6 @@ export async function getWatchedVideos(token, userID) {
 			}
 		}
 	`;
-
 	const response = await graphQL(token, operation, 'getWatchedVideos', { userID });
 
 	return response?.data?.statistics;
@@ -139,7 +126,6 @@ export async function getLikedVideos(token, userID) {
 			}
 		}
 	`;
-
 	const response = await graphQL(token, operation, 'getLikedVideos', { userID });
 
 	return response?.data?.statistics;
@@ -153,7 +139,6 @@ export async function getDisLikedVideos(token, userID) {
 			}
 		}
 	`;
-
 	const response = await graphQL(token, operation, 'getDisLikedVideos', { userID });
 
 	return response?.data?.statistics;

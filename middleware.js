@@ -8,7 +8,7 @@ async function middleWare(request, event) {
 
 	// console.log('middleWare event:', event);
 
-	if (userID || pathname.includes('/_next')  || pathname.includes('/logIn') || pathname.includes('/static') || pathname.includes('.ico') || pathname.includes('.jpg')|| pathname.includes('.svg')) {
+	if (userID || pathname.includes('/_next') || pathname.includes('/logIn') || pathname.includes('/static') || pathname.includes('.ico') || pathname.includes('.jpg') || pathname.includes('.svg')) {
 		return NextResponse.next();
 	};
 

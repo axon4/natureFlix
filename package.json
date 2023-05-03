@@ -1,6 +1,6 @@
 {
-	"name": "natureflix",
-	"version": "0.1.0",
+	"name": "natureFlix",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"start": "next start",

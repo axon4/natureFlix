@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import Logo from '../logo/Logo';
 import magicClient from '../../lib/magic/client';
@@ -22,12 +22,12 @@ function Navigation() {
 				if (eMail) {
 					setUserName(eMail);
 				};
-				
+
 				if (token) {
 					setDIDToken(token);
 				};
 			} catch (error) {
-				console.error('Error Getting EMail or DID Token', error);
+				console.error('Error Getting EMail/DID-Token:', error);
 			};
 		})();
 	}, []);
@@ -40,7 +40,7 @@ function Navigation() {
 
 	const onRatingsClick = event => {
 		event.preventDefault();
-		
+
 		router.push('/ratings');
 	};
 
@@ -55,10 +55,10 @@ function Navigation() {
 			});
 
 			if (await magicClient.user.isLoggedIn()) {
-				throw new Error('Still Logged In');
+				throw new Error('Still Logged-In');
 			};
 		} catch (error) {
-			console.error('Error Logging Out (Client)', error);
+			console.error('Error Logging-Out (Client):', error);
 		};
 	};
 
@@ -77,7 +77,7 @@ function Navigation() {
 					</button>
 					{showDropDown && (
 						<div className={styles.dropDown}>
-							<Link className={styles.logOut} href='/logIn' onClick={onLogOut}>Log Out</Link>
+							<Link className={styles.logOut} href='/logIn' onClick={onLogOut}>Log-Out</Link>
 							<div className={styles.lineWrapper}></div>
 						</div>
 					)}

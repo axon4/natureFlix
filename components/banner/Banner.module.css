@@ -78,7 +78,7 @@
 	background-image: linear-gradient(to top, var(--tw-gradient-stops));
 	--tw-gradient-from: var(--black);
 	background-size: cover;
-	background-position: "50% 50%";
+	background-position: '50% 50%';
 }
 
 .button {

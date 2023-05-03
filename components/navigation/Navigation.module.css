@@ -67,7 +67,7 @@
 	color: var(--white);
 	border-radius: 0.25rem;
 	border-color: var(--blue);
-	box-shadow: var(--shadow30, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow30);
+	box-shadow: var(--shadow30, 0 0 #000000), var(--ring-shadow, 0 0 #000000), var(--shadow30);
 }
 
 .logOut {

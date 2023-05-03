@@ -1,8 +1,6 @@
-/* spinner from: https://projects.lukehaas.me/css-loaders */
+/* source: https://projects.lukehaas.me/css-loaders */
 
-.loader,
-.loader:before,
-.loader:after {
+.loader, .loader:before, .loader:after {
 	border-radius: 50%;
 	width: 2.5em;
 	height: 2.5em;
@@ -25,9 +23,8 @@
 	animation-delay: -0.16s;
 }
 
-.loader:before,
-.loader:after {
-	content: "";
+.loader:before, .loader:after {
+	content: '';
 	position: absolute;
 	top: 0;
 }
@@ -44,9 +41,7 @@
 
 @-webkit-keyframes load7 {
 
-	0%,
-	80%,
-	100% {
+	0%, 80%, 100% {
 		box-shadow: 0 2.5em 0 -1.3em;
 	}
 
@@ -57,9 +52,7 @@
 
 @keyframes load7 {
 
-	0%,
-	80%,
-	100% {
+	0%, 80%, 100% {
 		box-shadow: 0 2.5em 0 -1.3em;
 	}
 

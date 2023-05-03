@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import styles from './Banner.module.css';
 
 function Banner({ title, subTitle, imageURL, videoID }) {
@@ -29,7 +29,7 @@ function Banner({ title, subTitle, imageURL, videoID }) {
 					</div>
 				</div>
 			</div>
-			<div style={{backgroundImage: `url(${imageURL})`}} className={styles.hero} />
+			<div style={{backgroundImage: `url('${imageURL}')`}} className={styles.hero} />
 		</section>
 	);
 };
